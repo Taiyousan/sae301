@@ -31,7 +31,7 @@ class ManifController extends AbstractController
     //     // return $this->render('product/show.html.twig', ['product' => $product]);
     // }
     
-    #[Route('/manif', name: 'app_manif_show')]
+    #[Route('/manif', name: 'app_manif')]
     public function show(ManagerRegistry $doctrine): Response
     {
         $manif = $doctrine->getRepository(Manifestation::class)->findAll();

@@ -37,6 +37,9 @@ class Manifestation
     #[ORM\Column(nullable: true)]
     private ?int $manif_prix = null;
 
+    #[ORM\ManyToOne(inversedBy: 'manifestations')]
+    private ?Lieux $manif_lieu = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +137,18 @@ class Manifestation
     public function setManifPrix(?int $manif_prix): self
     {
         $this->manif_prix = $manif_prix;
+
+        return $this;
+    }
+
+    public function getManifLieu(): ?Lieux
+    {
+        return $this->manif_lieu;
+    }
+
+    public function setManifLieu(?Lieux $manif_lieu): self
+    {
+        $this->manif_lieu = $manif_lieu;
 
         return $this;
     }
