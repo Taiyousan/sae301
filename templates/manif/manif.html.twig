@@ -13,7 +13,10 @@
     }
     .container-manif-card>* {
         flex: 1 1 25%;
+    }
 
+    .underline {
+        text-decoration: underline;
     }
 </style>
 
@@ -21,12 +24,15 @@
     {% for manif in allManif %}
             <div class="manif-card">
                 <h1>{{manif.getManifTitre}}</h1>
-                <p>{{manif.getManifGenre}}</p>
-                <p>{{manif.getManifDesc}}</p>
-                <p>{{manif.getManifCasting}}</p>
-               <p>{{manif.getManifHoraire}}</p>
-                <p>{{manif.getManifPrix}} euros</p>
-                <p>{{manif.getManifLieu.getLieuNom}}</p>
+                <p><span class="underline">Genre : </span>{{manif.getManifGenre}}</p>
+                <p><span class="underline">Description :</span> {{manif.getManifDesc}}</p>
+                <p><span class="underline">Casting :</span class="underline"> {{manif.getManifCasting}}</p>
+               <p><span class="underline">Heure :</span class="underline"> {{manif.getManifHoraire}}</p>
+                <p><span class="underline">Tarif :</span class="underline"> {{manif.getManifPrix}} euros</p>
+                <p> <span class="underline">Lieu :</span class="underline"> {% if manif.getManifLieu is not null %}
+                    {{manif.getManifLieu.getLieuNom}}
+                {% endif %}</p>
+
             </div>
     {% endfor %}
 </div>
