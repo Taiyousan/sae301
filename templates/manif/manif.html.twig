@@ -3,26 +3,40 @@
 {% block title %}Hello ManifController!{% endblock %}
 
 {% block body %}
-<style>
-   
-</style>
-
-<div class="container-manif-card">
-    {% for manif in allManif %}
-            <div class="manif-card">
-                <h1>{{manif.getManifTitre}}</h1>
-                <img src="/sae301/sae301/public/img/{{manif.getManifAffiche}}">
-                <p><span class="underline">Genre : </span>{{manif.getManifGenre}}</p>
-                <p><span class="underline">Description :</span> {{manif.getManifDesc}}</p>
-                <p><span class="underline">Casting :</span class="underline"> {{manif.getManifCasting}}</p>
-               <p><span class="underline">Heure :</span class="underline"> {{manif.getManifHoraire}}</p>
-                <p><span class="underline">Tarif :</span class="underline"> {{manif.getManifPrix}} euros</p>
-                <p><span class="underline">Lien image :</span class="underline"> {{manif.getManifAffiche}} </p>
-                <p> <span class="underline">Lieu :</span class="underline"> {% if manif.getManifLieu is not null %}
-                    {{manif.getManifLieu.getLieuNom}}
-                {% endif %}</p>
-
-            </div>
-    {% endfor %}
+<div class="home-searchbar-container">
+    <div class="home-searchbar-group">
+        <input type="text" name="home-searchbar" class="home-searchbar">
+        <select name="" id="" class="home-searchbar-option">
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+        </select>
+        <select name="" id="" class="home-searchbar-option">
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+        </select>
+    </div>
 </div>
+
+<section class="container-gallery-manif">
+    <div class="container-manif-card">
+        {% for manif in allManif %}
+                <div class="manif-card">
+                <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
+                </div>
+                    <h1>{{manif.getManifTitre}}</h1>
+                    <p><span class="underline">Genre : </span>{{manif.getManifGenre}}</p>
+                    <p><span class="underline">Description :</span> {{manif.getManifDesc}}</p>
+                    <p><span class="underline">Casting :</span class="underline"> {{manif.getManifCasting}}</p>
+                   <p><span class="underline">Heure :</span class="underline"> {{manif.getManifHoraire}}</p>
+                    <p><span class="underline">Tarif :</span class="underline"> {{manif.getManifPrix}} euros</p>
+                    <p><span class="underline">Lien image :</span class="underline"> {{manif.getManifAffiche}} </p>
+                    <p> <span class="underline">Lieu :</span class="underline"> {% if manif.getManifLieu is not null %}
+                        {{manif.getManifLieu.getLieuNom}}
+                    {% endif %}</p>
+                </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
