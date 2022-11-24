@@ -23,18 +23,27 @@
     <div class="container-manif-card">
         {% for manif in allManif %}
                 <div class="manif-card">
-                <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
-                </div>
-                    <h1>{{manif.getManifTitre}}</h1>
-                    <p><span class="underline">Genre : </span>{{manif.getManifGenre}}</p>
-                    <p><span class="underline">Description :</span> {{manif.getManifDesc}}</p>
-                    <p><span class="underline">Casting :</span class="underline"> {{manif.getManifCasting}}</p>
-                   <p><span class="underline">Heure :</span class="underline"> {{manif.getManifHoraire}}</p>
-                    <p><span class="underline">Tarif :</span class="underline"> {{manif.getManifPrix}} euros</p>
-                    <p><span class="underline">Lien image :</span class="underline"> {{manif.getManifAffiche}} </p>
-                    <p> <span class="underline">Lieu :</span class="underline"> {% if manif.getManifLieu is not null %}
-                        {{manif.getManifLieu.getLieuNom}}
-                    {% endif %}</p>
+                    <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
+                    </div>
+
+                    <div class="manif-card-title">
+                        <p>{{manif.getManifTitre}}</p>
+                    </div>
+
+                    
+
+                    <div class="manif-card-label">
+                        <p>{{manif.getManifGenre}}</p>
+                        <p>{{manif.getManifDate}}</p>
+                        <p>{% if manif.getManifLieu is not null %}
+                                {{manif.getManifLieu.getLieuNom}}
+                            {% endif %}</p>
+                    </div>
+
+                    <div class="card-separation-container"><span class="card-separation"></span></div>
+
+                    <div class="manif-card-desc"><p>{{manif.getManifDesc}}</p></div>
+                    
                 </div>
         {% endfor %}
     </div>
