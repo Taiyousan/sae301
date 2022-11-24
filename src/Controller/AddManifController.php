@@ -35,7 +35,5 @@ class AddManifController extends AbstractController
 
        
     }
-
-
 }
 

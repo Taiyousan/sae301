@@ -7,25 +7,65 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+           <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+           {# (librairie css :) #}
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "> 
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            <script src="/sae301/sae301/public/js/script.js" defer></script>
+            {# librairie js #}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         {% endblock %}
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
     </head>
     
     <body>
         {% block header %}
-            <ul>
-                <li><a href="{{ path('app_accueil') }}">Accueil</a></li>
-                <li><a href="{{ path('app_manif') }}">Manif</a></li>
-                <li><a href="{{ path('app_lieux') }}">Lieux</a></li>
-            </ul>
-            <ul>
-                <li><a href="{{ path('app_add_manif') }}">Ajout manif</a></li>
-            </ul>
+            
+                <header>
+                    <nav class="navbar">
+                        <div class="navbar-logo-container">
+                            <img src="/sae301/sae301/public/img/logo_navbar.png" alt="Logo" class="navbar-logo">
+                        </div>
+
+                        <div class="navbar-list-container navbar-list1-container">
+                            <a href="{{ path('app_accueil') }}">Accueil</a>
+                            <a href="{{ path('app_manif') }}">Spectacles</a>
+                            <a href="{{ path('app_lieux') }}">Lieux</a>
+                        </div>
+
+                        <div class="navbar-searchbar-container">
+                            
+                            <input type="search" class="navbar-searchbar input-field" placeholder="Rechercher">
+                            <i class="fa fa-search icon"></i>
+                        </div>
+
+                        <div class="navbar-list-container navbar-list2-container">
+                            
+                                <div class="navbar-list-item">
+                                    <a href="{{ path('app_accueil') }}">Profil</a>
+                                    <img src="/sae301/sae301/public/icons/profilecircle.png" class="item-icon" alt="">
+                                </div>
+                           
+                            <div class="navbar-list-item">
+                                
+                                    <a href="{{ path('app_manif') }}">Admin</a>
+                                    <img src="/sae301/sae301/public/icons/setting.png" alt="">
+                                
+                            </div>
+                        </div>
+
+                        
+                    </nav>
+                </header>
+            
         {% endblock %}
-        {% block body %}{% endblock %}
+       <main> {% block body %}{% endblock %}</main>
         <p>Hello World</p>
     </body>
 </html>

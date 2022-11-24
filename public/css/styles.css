@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES ------------------ */
+:root {
+    --color-neutre: #eeeeee;
+    --color-tonique: #a60000;
+    --color-secondaire: #eda010;
+
+    --height-navbar: 60px;
+
+    --border-test : 1px solid black;
+
+    --font-navbar : 'Josefin Sans', sans-serif;
+  }
+
+
+
+.manif-card {display: flex; flex-direction: column; flex-wrap: wrap; border: 0.4px solid black; padding: 5px;}
+.container-manif-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-manif-card>* {
+    flex: 1 1 25%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    opacity: 0;
+    padding-top: 106px;
+}
+
+
+/* Navbar -------------------------- */
+
+header {
+    width: 100vw;
+    background-color: var(--color-tonique);
+    position: fixed;
+    z-index: 2;
+}
+.navbar {
+    width: auto;
+    height: var(--height-navbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 20px;
+    font-family: var(--font-navbar);
+}
+
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+    height: var(--height-navbar);
+}
+
+.navbar-logo {
+    max-width: 80px;
+}
+
+.navbar-list-container a, .navbar-list-container a:visited {
+    color: white;
+}
+
+.navbar-list-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    
+}
+
+.navbar-list-container > a {
+    height: 100%;
+    display: flex;
+    align-items: center ;
+    transition: 0.2s ease-in-out;
+}
+
+.navbar-list-container > a:hover {
+    border-bottom: white 5px solid;
+}
+
+.navbar-list1-container {
+    width: 300px;
+}
+
+.navbar-list2-container {
+    width: 200px;
+    height: 100%;
+}
+
+.navbar-list-item {
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-list-item img {
+    max-width: 20px;
+    transition: 0.5s;
+}
+
+.navbar-list-item:hover img {
+   transform: rotate(720deg);
+}
+
+
+
+.navbar-list-item a {
+    margin-right: 10px;
+}
+
+.navbar-searchbar-container {
+    position: relative;
+}
+
+.navbar-searchbar {
+    border-radius: 15px;
+    height: 25px;
+    width: 350px;
+    padding: 10px;
+    border: none;
+}
+
+.navbar-searchbar:focus {
+    outline: none;
+}
+
+
+.navbar-searchbar::placeholder {
+    color : rgb(186, 186, 186);
+}
+
+.icon {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+}
+
+
