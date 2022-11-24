@@ -18,7 +18,7 @@ class AddManifController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $manif = new Manifestation();
-        // ...
+       
 
         $form = $this->createForm(ManifType::class, $manif);
         
@@ -36,6 +36,6 @@ class AddManifController extends AbstractController
        
     }
 
-    
+
 }
 

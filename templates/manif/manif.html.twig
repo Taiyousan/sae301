@@ -18,17 +18,23 @@
     .underline {
         text-decoration: underline;
     }
+
+    img {
+        max-width: 200px;
+    }
 </style>
 
 <div class="container-manif-card">
     {% for manif in allManif %}
             <div class="manif-card">
                 <h1>{{manif.getManifTitre}}</h1>
+                <img src="/sae301/sae301/public/img/{{manif.getManifAffiche}}">
                 <p><span class="underline">Genre : </span>{{manif.getManifGenre}}</p>
                 <p><span class="underline">Description :</span> {{manif.getManifDesc}}</p>
                 <p><span class="underline">Casting :</span class="underline"> {{manif.getManifCasting}}</p>
                <p><span class="underline">Heure :</span class="underline"> {{manif.getManifHoraire}}</p>
                 <p><span class="underline">Tarif :</span class="underline"> {{manif.getManifPrix}} euros</p>
+                <p><span class="underline">Lien image :</span class="underline"> {{manif.getManifAffiche}} </p>
                 <p> <span class="underline">Lieu :</span class="underline"> {% if manif.getManifLieu is not null %}
                     {{manif.getManifLieu.getLieuNom}}
                 {% endif %}</p>
