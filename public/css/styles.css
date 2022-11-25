@@ -36,25 +36,69 @@
     margin-bottom: 50px;
     width: 200px;
     flex-basis: 350px;
-    background-color: #acacac;
-    color: white;
-    transition: 0.2s;
-    border-radius: 20px;
+    color: black;
+    transition: 0.2s; 
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
 }
 
 .manif-card:hover {
     transform: translateY(-20px);
+    box-shadow: 0 2px 30px -5px rgb(0 0 0 / 50%);
 }
 
 .manif-card-img {
     width: 100%;
     height: 300px;
-    background-size: contain;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center;
-    background-color: var(--color-neutre);
-    border-radius: 20px 20px 0 0;
+    background-position: top;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--color-neutre); */
+    /* border-radius: 20px 20px 0 0; */
 }
+
+.manif-card:hover .manif-card-img {
+    opacity: 1;
+    background-size: 70%;
+}
+
+.manif-card-button {
+    border: var(--border-test);
+    background-color: var(--color-tonique);
+    color: white;
+    padding: 8px;
+    opacity: 0;
+    transition: 0.2s;
+    transform: translateY(180px);  
+    z-index: 10;
+}
+
+.manif-card:hover .manif-card-img .manif-card-button{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.manif-card .manif-card-img .manif-card-img-dark{
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manif-card:hover .manif-card-img .manif-card-img-dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+
+
+
 .container-manif-card {
     display: flex;
     flex-wrap: wrap;
