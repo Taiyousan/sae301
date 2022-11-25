@@ -7,6 +7,7 @@
 :root {
     --color-neutre: #eeeeee;
     --color-tonique: #a60000;
+    --color-active: #c71717;
     --color-secondaire: #eda010;
 
     --height-navbar: 60px;
@@ -66,14 +67,24 @@
 }
 
 .manif-card-button {
-    border: var(--border-test);
-    background-color: var(--color-tonique);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 8px;
     opacity: 0;
-    transition: 0.2s;
-    transform: translateY(180px);  
+    transition: 0.4s;
+    transform: translateY(200px);  
     z-index: 10;
+    border : solid 2.5px var(--color-tonique);
+    font-size: 20px;
+}
+
+.manif-card-button:hover {
+    background-color: var(--color-tonique);
+    transition: 0.1s !important;
+}
+
+.manif-card-button:active {
+    background-color: var(--color-active);
 }
 
 .manif-card:hover .manif-card-img .manif-card-button{
@@ -95,6 +106,8 @@
     background-color: rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
+
+
 
 
 
@@ -138,7 +151,7 @@
 
 .manif-card-desc {
     font-size: smaller;
-    padding: 10px;
+    padding: 30px;
 }
 
 .card-separation-container {
