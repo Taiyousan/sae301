@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -10,7 +11,9 @@
            
            {# (librairie css :) #}
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "> 
-           <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+           
+           <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 480px)" href="{{ asset('css/styles.mobile.css') }}" >
+           <link rel="stylesheet" media="screen and (min-width: 480px)" href="{{ asset('css/styles.css') }}">
         {% endblock %}
 
         {% block javascripts %}
@@ -31,36 +34,45 @@
             
                 <header>
                     <nav class="navbar">
-                        <div class="navbar-logo-container">
-                            <img src="/sae301/sae301/public/img/logo_navbar.png" alt="Logo" class="navbar-logo">
-                        </div>
 
-                        <div class="navbar-list-container navbar-list1-container">
-                            <a href="{{ path('app_accueil') }}">Accueil</a>
-                            <a href="{{ path('app_manif') }}">Spectacles</a>
-                            <a href="{{ path('app_lieux') }}">Lieux</a>
+                        <div class="hamburger-container">
+                            <span class="mobile-hamburger" id="hamburger1"></span>
+                                <span class="mobile-hamburger" id="hamburger2"></span>
+                                <span class="mobile-hamburger" id="hamburger3"></span>
                         </div>
-
-                        <div class="navbar-searchbar-container">
-                            
-                            <input type="search" class="navbar-searchbar input-field" placeholder="Rechercher">
-                            <i class="fa fa-search icon"></i>
-                        </div>
-
-                        <div class="navbar-list-container navbar-list2-container">
-                            
-                                <div class="navbar-list-item">
-                                    <a href="{{ path('app_accueil') }}">Profil</a>
-                                    <img src="/sae301/sae301/public/icons/profilecircle.png" class="item-icon" alt="">
-                                </div>
-                           
-                            <div class="navbar-list-item">
-                                
-                                    <a href="{{ path('app_manif') }}">Admin</a>
-                                    <img src="/sae301/sae301/public/icons/setting.png" alt="">
-                                
+                        
+                        
+                            <div class="navbar-logo-container nav-contenu">
+                                <img src="/sae301/sae301/public/img/logo_navbar.png" alt="Logo" class="navbar-logo">
                             </div>
-                        </div>
+    
+                            <div class="navbar-list-container navbar-list1-container nav-contenu">
+                                <a href="{{ path('app_accueil') }}">Accueil</a>
+                                <a href="{{ path('app_manif') }}">Spectacles</a>
+                                <a href="{{ path('app_lieux') }}">Lieux</a>
+                            </div>
+    
+                            <div class="navbar-searchbar-container nav-contenu">
+                                
+                                <input type="search" class="navbar-searchbar input-field" placeholder="Rechercher">
+                                <i class="fa fa-search icon"></i>
+                            </div>
+    
+                            <div class="navbar-list-container navbar-list2-container nav-contenu">
+                                
+                                    <div class="navbar-list-item">
+                                        <a href="{{ path('app_accueil') }}">Profil</a>
+                                        <img src="/sae301/sae301/public/icons/profilecircle.png" class="item-icon" alt="">
+                                    </div>
+                               
+                                <div class="navbar-list-item nav-contenu">
+                                    
+                                        <a href="{{ path('app_manif') }}">Admin</a>
+                                        <img src="/sae301/sae301/public/icons/setting.png" alt="">
+                                    
+                                </div>
+                            </div>
+                        
 
                         
                     </nav>
