@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ManifController!{% endblock %}
+
+{% block body %}
+<div class="home-searchbar-container">
+    <div class="home-searchbar-group">
+        <input type="text" name="home-searchbar" class="home-searchbar">
+        <select name="" id="" class="home-searchbar-option">
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+        </select>
+        <select name="" id="" class="home-searchbar-option">
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+            <option value="">OPTION</option>
+        </select>
+    </div>
+</div>
+
+<section class="container-gallery-manif">
+    <div class="container-manif-card">
+        {% for manif in allManif %}
+                <div class="manif-card">
+                    
+                        <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
+                            <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
+                        
+                        </div>
+                    
+
+                    <div class="manif-card-title">
+                        <h4>{{manif.getManifTitre}}</h4>
+                    </div>
+
+                    
+
+                    <div class="manif-card-label">
+                        <p>{{manif.getManifGenre}}</p>
+                        <p>{{manif.getManifDate}}</p>
+                        <p>{% if manif.getManifLieu is not null %}
+                                {{manif.getManifLieu.getLieuNom}}
+                            {% endif %}</p>
+                    </div>
+
+                    <div class="card-separation-container"><span class="card-separation"></span></div>
+
+                    <div class="manif-card-desc"><p>{{manif.getManifDesc}}</p></div>
+                    
+                </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
