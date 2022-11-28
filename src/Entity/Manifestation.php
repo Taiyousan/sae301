@@ -146,6 +146,7 @@ class Manifestation
         return $this->manif_lieu;
     }
 
+
     public function setManifLieu(?Lieux $manif_lieu): self
     {
         $this->manif_lieu = $manif_lieu;

@@ -45,6 +45,11 @@ class Lieux
         return $this->lieu_nom;
     }
 
+    public function __toString(): string
+    {
+        return $this->lieu_nom;
+    }
+
     public function setLieuNom(?string $lieu_nom): self
     {
         $this->lieu_nom = $lieu_nom;
