@@ -24,17 +24,17 @@
         {% for manif in allManif %}
                 <div class="manif-card">
                     
-                        <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
+
+                    <div class="manif-card-img" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
                             <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
-                        
-                        </div>
+                    </div>
                     
 
                     <div class="manif-card-title">
                         <h4>{{manif.getManifTitre}}</h4>
                     </div>
 
-                    
+
 
                     <div class="manif-card-label">
                         <p>{{manif.getManifGenre}}</p>
