@@ -16,7 +16,7 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            <script src="/sae301/sae301/public/js/script.js" defer></script>
+            <script src="{{ asset('js/script.js') }}" defer></script>
             {# librairie js #}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         {% endblock %}
@@ -52,13 +52,13 @@
                             
                                 <div class="navbar-list-item">
                                     <a href="{{ path('app_accueil') }}">Profil</a>
-                                    <img src="/sae301/sae301/public/icons/profilecircle.png" class="item-icon" alt="">
+                                    <img src="{{ asset('icons/profilecircle.png') }}" class="item-icon" alt="">
                                 </div>
                            
                             <div class="navbar-list-item">
                                 
                                     <a href="{{ path('app_manif') }}">Admin</a>
-                                    <img src="/sae301/sae301/public/icons/setting.png" alt="">
+                                    <img src="{{ asset('icons/profilecircle.png') }}" alt="">
                                 
                             </div>
                         </div>
