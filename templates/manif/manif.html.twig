@@ -24,7 +24,10 @@
         {% for manif in allManif %}
                 <div class="manif-card">
                     
-                        <div class="manif-card-img" style="background-image: url('/sae301/sae301/public/img/{{manif.getManifAffiche}}');">
+
+                    <div class="manif-card-img" style="background-image: url('{{asset("img/#{manif.getManifAffiche}")}}');">
+
+                        <img src="" alt="">  
                             <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
                         
                         </div>
