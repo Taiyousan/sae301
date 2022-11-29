@@ -50,15 +50,35 @@
 
                         <div class="navbar-list-container navbar-list2-container">
                             
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                   
+                                <div class="navbar-list-item">
+                                     <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                     <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
+                                </div>
                                 <div class="navbar-list-item">
                                     <a href="{{ path('app_accueil') }}">Profil</a>
-                                    <img src="{{ asset("img/profilecircle.png") }}" class="item-icon" alt="">
+                                    <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
                                 </div>
+                                {% else %}
+                                <div class="navbar-list-item">
+                                     <a class="link" href="{{ path('app_login') }}">Connexion</a>
+                                     <img src="{{ asset('img/login.png') }}" class="item-icon" alt="">
+                                </div>
+                                <div class="navbar-list-item">
+                                     <a class="link" href="{{ path('app_register') }}">S'inscrire</a>
+                                     <img src="{{ asset('img/register.png') }}" class="item-icon" alt="">
+                                </div>
+                                {% endif %}
                            
                             <div class="navbar-list-item">
                                 
+                                {% if is_granted('ROLE_ADMIN') %}
                                     <a href="{{ path('app_manif') }}">Admin</a>
                                     <img src="{{ asset("img/setting.png") }}" alt="">
+                                {% endif %}
+
+                                
                                 
                             </div>
                         </div>

@@ -247,8 +247,9 @@ header {
 }
 
 .navbar-list2-container {
-    width: 200px;
+    width: 300px;
     height: 100%;
+    text-align: center;
 }
 
 .navbar-list-item {
