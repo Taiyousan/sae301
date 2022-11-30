@@ -3,17 +3,71 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <section class="register">
+        
+        <div class="form_container">
+            <div class="form_sidepage" style="background-image: url('{{asset("img/register_sidebar_bg.png")}}');">
+                {# <img src="{{ asset("img/logo_navbar.png") }}" alt="Logo de La Cohorte" class="form_sidepage_img"> #}
+                <div class="form_sidepage_text">
+                    <p>Nous sommes ravis que vous nous rejoigniez.</p>
+                    <p>Vous avez déjà un compte ?</p>
+                </div>
+                <div class="form_sidepage_button">
+                 <a href="{{ path('app_login') }}" class="form_login_redirect">Connectez-vous</a>
+                </div>
+            </div>
+            <div class="form_main">
+                <div class="form_form">
+                    {{ form_start(registrationForm, {
+                        attr: {'class': 'form_form_form'}
+                    }) }}
+                        {{ form_row(registrationForm.nom, {
+                            label: 'Nom',
+                            attr: {'class': 'form_input'}
+                        }) }}
+                        {{ form_row(registrationForm.prenom, {
+                            label: 'Prénom',
+                            attr: {'class': 'form_input'}
+                        }) }}
+                        {{ form_row(registrationForm.email, {
+                            label: 'Mail',
+                            attr: {'class': 'form_input'}
+                        }) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Mot de passe',
+                            attr: {'class' : 'form_input'}
+                        }) }}
+                        
+                    {{ form_row(registrationForm.agreeTerms, {
+                        attr : {'class' : 'form_checkbox'}
+                    }) }}
+                
+                        <button type="submit" class="btn">S'inscrire</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <script defer>
+        window.addEventListener("load", (event) => { //on attend que la page soit chargée
+
+            const labels = document.querySelectorAll('label')//on récupère tous les labels
+
+            
+            labels.forEach(function(item){
+                let input = item.nextElementSibling
+                input.addEventListener('click', function(){
+                    console.log(input)
+                    gsap.to(item, {
+                    x: 0,
+                    opacity : 0.5
+                })
+                })
+            })
+        });
+       
+    </script>
 {% endblock %}

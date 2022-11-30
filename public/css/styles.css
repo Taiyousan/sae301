@@ -15,6 +15,7 @@
     --border-test : 1px solid black;
 
     --font-navbar : 'Josefin Sans', sans-serif;
+    --font-all : 'Josefin Sans', sans-serif;
   }
 
 
@@ -172,9 +173,9 @@
     text-decoration: underline;
 }
 
-img {
+/* img {
     max-width: 200px;
-}
+} */
 
 a {
     text-decoration: none;
@@ -349,3 +350,124 @@ header {
     outline: none;
     border: none;
 }
+
+/* PAGE INSCRIPTION --------------- */
+section.register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: var(--font-all);
+}
+
+div.form_sidepage {
+    height: 100%;
+    width: 40%;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: contain;
+}
+
+
+
+.form_sidepage_text {
+    color: white;
+    width: 95%;
+    height: 20%;
+}
+
+.form_sidepage_p {
+    width: 100%;
+}
+
+.form_sidepage_text p:first-child {
+    font-size: 20pt;
+    margin-bottom: 20px;
+}
+
+div.form_container {
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    height: 70%;
+    display: flex;
+}
+
+.form_main {
+    width: 60%;
+}
+
+.form_form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_form_form {
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form_form_form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_form_form button {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    height: 40px;
+    background-color: white;
+    font-size: var(--font-all);
+}
+
+.form_form_form div input {
+    width: 60%;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color:#a6000045;
+}
+
+.form_form_form div label {
+    opacity: 0.5;
+    transform: translateX(180px);
+}
+
+.form_form_form div input:active + .form_form_form div label {
+    border: none;
+    background-color: green;
+}
+
+.form_checkbox {
+    border-radius: 20px !important;
+    width: fit-content !important;
+    transform: none !important;
+}
+
+.form_login_redirect {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    height: 40px;
+    background-color: white;
+    font-size: var(--font-all);
+    padding: 15px;
+}
+
+
+
+
