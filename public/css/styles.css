@@ -447,10 +447,6 @@ div.form_container {
     transform: translateX(180px);
 }
 
-.form_form_form div input:active + .form_form_form div label {
-    border: none;
-    background-color: green;
-}
 
 .form_checkbox {
     border-radius: 20px !important;

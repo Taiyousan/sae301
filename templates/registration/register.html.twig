@@ -58,8 +58,16 @@
 
             
             labels.forEach(function(item){
-                let input = item.nextElementSibling
-                input.addEventListener('click', function(){
+                let input = item.nextElementSibling //on récupère tous les input
+                input.addEventListener('click', function(){ //au click : le label se déplace
+                    console.log(input)
+                    gsap.to(item, {
+                    x: 0,
+                    opacity : 0.5
+                })
+                })
+
+                input.addEventListener('focus', function(){ //au focus : le label se déplace
                     console.log(input)
                     gsap.to(item, {
                     x: 0,
