@@ -3,25 +3,71 @@
 
 
 {% block body %}
+
+
+
 <div class="home-searchbar-container">
     <div class="home-searchbar-group">
-        <input type="text" name="home-searchbar" class="home-searchbar">
-        <select name="" id="" class="home-searchbar-option">
-            <option value="">OPTION</option>
-            <option value="">OPTION</option>
-            <option value="">OPTION</option>
-        </select>
-        <select name="" id="" class="home-searchbar-option">
-            <option value="">OPTION</option>
-            <option value="">OPTION</option>
-            <option value="">OPTION</option>
-        </select>
+
+        {{ render(controller(
+        'App\\Controller\\SearchController::searchBar'
+ )) }}
     </div>
+</div>
+
+
+
 </div>
 
 <section class="container-gallery-manif">
     <div class="container-manif-card">
+       
+       {# si on a des résultats de recherche, alors on les affiche #}
+{% if searchResult  %}
+
+            {% if app.request.method == 'POST' %}
+            
+                {% if searchResult | length == 0 %}
+                    <h4>Aucun résulat pour votre recherche.</h4>
+                   {% else %}
+                       
+                       {% for manif  in searchResult %}
+                       <div class="manif-card">
+                    
+
+                    <div class="manif-card-img" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                            <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
+                    </div>
+                    
+
+                    <div class="manif-card-title">
+                        <h4>{{manif.getManifTitre}}</h4>
+                    </div>
+
+
+
+                    <div class="manif-card-label">
+                        <p>{{manif.getManifGenre}}</p>
+                        <p>{{manif.getManifDate}}</p>
+                        <p>{% if manif.getManifLieu is not null %}
+                                {{manif.getManifLieu.getLieuNom}}
+                            {% endif %}</p>
+                    </div>
+
+                    <div class="card-separation-container"><span class="card-separation"></span></div>
+
+                    <div class="manif-card-desc"><p>{{manif.getManifDesc}}</p></div>
+                    
+                </div>
+                      {% endfor %}
+                  {% endif %}
+             </div>
+        {% endif %}
+{# si on a pas de résultats de recherche, alors on affiche tout #}
+{% else %}
         {% for manif in allManif %}
+
+
                 <div class="manif-card">
                     
 
@@ -50,6 +96,15 @@
                     
                 </div>
         {% endfor %}
+    {% endif %}
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    
+
+ 
+
+</script>
 {% endblock %}

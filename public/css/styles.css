@@ -319,6 +319,7 @@ header {
     height: 50px;
     border-radius: 40px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding-left: 10px;
@@ -341,6 +342,10 @@ header {
     border-radius: 40px;
 }
 
+.home-searchbar-group form {
+    width: 100%;
+}
+
 .home-searchbar {
     border-radius: 40px;
     width: 400px;
@@ -350,6 +355,24 @@ header {
     outline: none;
     border: none;
 }
+
+#form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.home-searchbar-button {
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--color-tonique);
+    color: white;
+    cursor: pointer;
+}
+
+
 
 /* PAGE INSCRIPTION --------------- */
 section.section_form {

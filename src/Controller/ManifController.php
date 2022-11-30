@@ -34,7 +34,8 @@ class ManifController extends AbstractController
     #[Route('/manif', name: 'app_manif')]
     public function show(ManagerRegistry $doctrine): Response
     {
-        $manif = $doctrine->getRepository(Manifestation::class)->findAll();
+        $manif = $doctrine->getRepository(Manifestation::class)->findAll(); //une variable dans laquelle on a toute la table
+        $searchResult = null; // une variable de résultat de recherches vide 
 
         if (!$manif) {
             throw $this->createNotFoundException(
@@ -45,6 +46,7 @@ class ManifController extends AbstractController
         $test = 'tested';
         return $this->render('manif/manif.html.twig', [
             'allManif' => $manif,
+            'searchResult' => $searchResult,
         ]);
 
         // or render a template
