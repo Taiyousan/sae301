@@ -57,7 +57,7 @@
                                      <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
                                 </div>
                                 <div class="navbar-list-item">
-                                    <a href="{{ path('app_accueil') }}">Profil</a>
+                                    <a href="{{ path('app_accueil') }}">{{ app.user.prenom }}</a>
                                     <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
                                 </div>
                                 {% else %}
