@@ -14,15 +14,42 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+    <section class="section_form">
+        <div class="form_container">
+            <div class="form_sidepage" style="background-image: url('{{asset("img/register_sidebar_bg.png")}}');">
+                    {# <img src="{{ asset("img/logo_navbar.png") }}" alt="Logo de La Cohorte" class="form_sidepage_img"> #}
+                    <div class="form_sidepage_text">
+                        <p>Ravis de vous revoir !</p>
+                        <p>Vous n'avez pas de compte ?</p>
+                    </div>
+                    <div class="form_sidepage_button">
+                     <a href="{{ path('app_register') }}" class="form_login_redirect">S'inscrire</a>
+                    </div>
+                </div>
+            <div class="form_main">
+                <div class="form_form">
+                    <div class="form_form_form">
+                        <div>
+                            <label for="inputEmail">Mail</label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"required autofocus>
+                        </div>
+                        <div>
+                            <label for="inputPassword">Mot de passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" required>
+                        </div>
+                    
+                        <div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}">
+                        </div>
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            Se connecter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -35,10 +62,26 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    
 </form>
 
+<script>
+    window.addEventListener("load", (event) => {
+        const labels = document.querySelectorAll('label')//on récupère tous les labels
+
+        labels.forEach(function(item){
+                let input = item.nextElementSibling //on récupère tous les input
+                if (input.value ==0){
+                    console.log(input)
+                    gsap.to(item, {
+                    x: 0,
+                    opacity : 0.5
+                })   
+                }
+                    
+})
+})
+</script>
 
 {% endblock %}
+    

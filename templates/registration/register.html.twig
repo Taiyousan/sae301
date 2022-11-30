@@ -5,7 +5,7 @@
 {% block body %}
     
 
-    <section class="register">
+    <section class="section_form">
         
         <div class="form_container">
             <div class="form_sidepage" style="background-image: url('{{asset("img/register_sidebar_bg.png")}}');">
@@ -52,7 +52,7 @@
     </section>
 
     <script defer>
-        window.addEventListener("load", (event) => { //on attend que la page soit chargée
+        window.addEventListener("load", (event) => {  //on attend que la page soit chargée
 
             const labels = document.querySelectorAll('label')//on récupère tous les labels
 
@@ -67,7 +67,7 @@
                 })
                 })
 
-                input.addEventListener('focus', function(){ //au focus : le label se déplace
+                input.addEventListener('click', function(){ //au focus : le label se déplace
                     console.log(input)
                     gsap.to(item, {
                     x: 0,

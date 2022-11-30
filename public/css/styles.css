@@ -187,7 +187,7 @@ body {
 
 main {
     opacity: 0;
-    padding-top: 106px;
+    padding-top: 80px;
 }
 
 
@@ -352,7 +352,7 @@ header {
 }
 
 /* PAGE INSCRIPTION --------------- */
-section.register {
+section.section_form {
     width: 100vw;
     height: 100vh;
     display: flex;
