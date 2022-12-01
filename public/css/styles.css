@@ -370,8 +370,34 @@ header {
     background-color: var(--color-tonique);
     color: white;
     cursor: pointer;
+    font-family: var(--font-all);
 }
 
+.home-searchbar-retour {
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--color-tonique);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-all);
+    text-align: center;
+    padding: 5px;
+    font-size: small;
+}
+
+.retour-animate {
+    opacity: 0;
+}
+
+.noresult {
+    font-family: var(--font-all);
+}
 
 
 /* PAGE INSCRIPTION --------------- */

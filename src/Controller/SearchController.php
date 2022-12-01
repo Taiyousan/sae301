@@ -48,12 +48,14 @@ class SearchController extends AbstractController
      
     public function handleSearch(Request $request, ManifestationRepository $repo)
     {
+        $allManif = null;
         $query = $request->request->all('form')['query'];
         if($query) {
             $searchResult = $repo->findArticlesByName($query);
         }
         return $this->render('manif/manif.html.twig', [
-            'searchResult' => $searchResult
+            'searchResult' => $searchResult,
+            'allManif' => $allManif
         ]);
     }
 }
