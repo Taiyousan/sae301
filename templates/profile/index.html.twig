@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil de {{ app.user.prenom }}{% endblock %}
+
+{% block body %}
+
+    <main>
+    <section class="section_form">
+        <div class="form_container">
+            <div class="form_sidepage" style="background-image: url('{{asset("img/register_sidebar_bg.png")}}');">
+                <div class="form_sidepage_text">
+                    <p>Bienvenue sur votre profil, <br>{{ app.user.prenom }} {{ app.user.nom }}.</p>
+                   
+                </div>
+                
+            </div>
+            <div class="form_main">
+                <div class="form_form">
+                    
+                    <div class="profile_info">
+                        <div class="profile_info_list">
+                            <p>Vos informations :</p>
+                            <ul>
+                                <li class="profile-item"><div class="profile-item-label">Nom : </div><div>{{ app.user.nom }}</div></li>
+                                <li class="profile-item"><div class="profile-item-label">Prénom : </div><div>{{ app.user.prenom }}</div></li>
+                                <li class="profile-item"><div class="profile-item-label">Mail : </div><div>{{ app.user.email }}</div></li>
+                            </ul>
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
