@@ -1,37 +1,36 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}TEST DEV!{% endblock %}</title>
+        <title>{% block title %}LA COHORTE{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="favicon" href="asset{}"> {# FAVICON A INTEGRER #}
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
            
            {# (librairie css :) #}
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "> 
-           <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "> 
+                <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             <script src="{{ asset('js/script.js') }}" defer></script>
-            {# librairie js #}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-            <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            {# librairies js #}
+                {# gsap #}<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                {# jquery #}<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         {% endblock %}
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+            {# fonts #}
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
     </head>
     
     <body>
-        {% block header %}
-            
+        {% block header %}    
                 <header>
                     <nav class="navbar">
                         <div class="navbar-logo-container">
@@ -44,38 +43,39 @@
                             <a href="{{ path('app_lieux') }}">Lieux</a>
                         </div>
 
-                        <div class="navbar-searchbar-container">
-                            
+                        <div class="navbar-searchbar-container"> {# Plus affichée mais toujours présente #}                     
                             <input type="search" class="navbar-searchbar input-field" placeholder="Rechercher">
                             <i class="fa fa-search icon"></i>
                         </div>
 
                         <div class="navbar-list-container navbar-list2-container">
                             
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                   
-                                <div class="navbar-list-item">
-                                     <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
-                                     <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
-                                </div>
-                                <div class="navbar-list-item">
-                                    <a href="{{ path('app_accueil') }}">{{ app.user.prenom }}</a>
-                                    <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
-                                </div>
-                                {% else %}
-                                <div class="navbar-list-item">
-                                     <a class="link" href="{{ path('app_login') }}">Connexion</a>
-                                     <img src="{{ asset('img/login.png') }}" class="item-icon" alt="">
-                                </div>
-                                <div class="navbar-list-item">
-                                     <a class="link" href="{{ path('app_register') }}">S'inscrire</a>
-                                     <img src="{{ asset('img/register.png') }}" class="item-icon" alt="">
-                                </div>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %} {# Si on a un user connecté, on affiche le contenu suivant #}                   
+                                    
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                        <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
+                                    </div>
+                                    <div class="navbar-list-item">
+                                        <a href="{{ path('app_accueil') }}">{{ app.user.prenom }}</a> 
+                                        <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
+                                    </div>
+
+                                {% else %} {# Si on a pas d'user connecté, on affiche seulement le contenu suivant :s #}
+
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_login') }}">Connexion</a>
+                                        <img src="{{ asset('img/login.png') }}" class="item-icon" alt="">
+                                    </div>
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_register') }}">S'inscrire</a>
+                                        <img src="{{ asset('img/register.png') }}" class="item-icon" alt="">
+                                    </div>
                                 {% endif %}
                            
                             <div class="navbar-list-item">
                                 
-                                {% if is_granted('ROLE_ADMIN') %}
+                                {% if is_granted('ROLE_ADMIN') %} {# Si l'user connecté à le rôle d'admin, on affiche le contenu suivant : #}
                                     <a href="{{ path('admin') }}">Admin</a>
                                     <img src="{{ asset("img/setting.png") }}" alt="">
                                 {% endif %}

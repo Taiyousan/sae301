@@ -278,6 +278,7 @@ header {
 
 .navbar-searchbar-container {
     position: relative;
+    opacity: 0;
 }
 
 .navbar-searchbar {
