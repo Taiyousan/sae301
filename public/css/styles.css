@@ -215,6 +215,13 @@ header {
     height: var(--height-navbar);
 }
 
+.navbar-logo-container a {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
 .navbar-logo {
     max-width: 80px;
 }
