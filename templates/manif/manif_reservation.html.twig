@@ -1,0 +1,24 @@
+{% extends './base.html.twig' %}
+
+
+
+{% block body %}
+
+<main>
+
+
+    <div class="manif-card-title">
+        <p></p>
+
+
+        <span id="article">{{manif.getManifTitre}}</span> - <span id="prix">{{manif.getManifPrix}}</span>€
+        <input type="number" value="1" min="1" max="99" id="qte">
+        <input type="hidden" id="id" value="{{manif.getId}}">
+        <button id="ajout">ajouter au panier</button>
+    </div>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+{% endblock %}

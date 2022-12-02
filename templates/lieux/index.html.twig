@@ -7,26 +7,65 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    .manif-card {display: flex; flex-direction: column; flex-wrap: wrap; border: 0.4px solid black; padding: 5px;}
+    .manif-card {}
+
     .container-manif-card {
         display: flex;
         flex-wrap: wrap;
     }
     .container-manif-card>* {
         flex: 1 1 25%;
-
+    
     }
-</style>
 
-<div class="container-manif-card">
+    .lieu_card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0px;
+    width: 50%;
+    flex-basis: 40%;
+    height: 20vh;
+    margin-bottom: 0px;
+    justify-content: space-between;
+    background-color: #650A0A;
+    overflow-y: hidden;
+}
+}
+
+</style>
+<div class="lieu_intro">Découvrez nos lieux !</div>
+<div class="container-lieu-card">
+
     {% for lieu in allLieux %}
-            <div class="manif-card">
-                <h1>{{lieu.getLieuNom}}</h1>
-                <p>Capacité max : {{lieu.getLieuCapacite}}</p>
-                <ul>{% for manif in lieu.getManifestations %}
-                    <li>{{ manif.getManifTitre }}</li>
-                {% endfor %}</ul>
+            <div class="manif-card lieu_card">
+
+                <div class="lieu_info">
+                    <h1>{{lieu.getLieuNom}}</h1>
+
+                    <p>{{lieu.getLieuAdrNum}} {{lieu.getLieuAdrRue}} </p>
+
+                    <h3 class="lieu_place">{{lieu.getLieuCapacite}} places</h3>
+                </div>
+
+                <div class="lieu_manif">
+
+                    <h2 class="lieu_mani_current">En ce moment</h2>
+
+                    {% set i = 0 %}
+                    <ul>{% for manif in lieu.getManifestations %}
+                            {% set i = i + 1 %}
+                                 {% if i<4  %}
+                                     <li>{{ manif.getManifTitre }}</li> <hr>
+                            {% endif %}
+
+                        {% endfor %}</ul>
+                </div>
+
+
             </div>
     {% endfor %}
 </div>
+</main>
 {% endblock %}

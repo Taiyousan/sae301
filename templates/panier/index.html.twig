@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .panier_produit {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #bfbfbf;
+    }
+
+    #zone {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4vh;
+    }
+</style>
+
+<main>
+    <div class="tableau">
+        <div id="zone">
+
+        </div>
+
+        <div class="prix_total">prix total : <span id="total">0</span>€</div>
+    </div>
+    <div class="bouton_commande">
+        <a href="./manifestation" class="retour_commande">Retour</a>
+        <a href="./panier_finalisation.html.twig">finaliser</a>
+        <form action="./finalisation" method="post">
+            <input type="hidden" name="liste" id="liste">
+            <input type="submit" value="Valider ma commande." class="valider_commande">
+        </form>
+    </div>
+
+
+    </div>
+
+
+
+
+    {% endblock %}

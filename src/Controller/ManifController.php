@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Manifestation;
+use App\Repository\ManifestationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,7 +31,7 @@ class ManifController extends AbstractController
     //     // in the template, print things with {{ product.name }}
     //     // return $this->render('product/show.html.twig', ['product' => $product]);
     // }
-    
+
     #[Route('/manif', name: 'app_manif')]
     public function show(ManagerRegistry $doctrine): Response
     {
@@ -53,4 +54,16 @@ class ManifController extends AbstractController
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
     }
+
+    #[Route('/manif/{id}', name: 'app_manif_reservation')]
+    public function afficherManifestation(ManifestationRepository $manifestationRepository, $id): Response
+    {
+
+        $manifestation_id = $manifestationRepository->find($id);
+
+        return $this->render('manif/manif_reservation.html.twig', [
+            'manif' => $manifestation_id,
+        ]);
+    }
+
 }

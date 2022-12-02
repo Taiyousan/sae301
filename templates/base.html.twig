@@ -18,6 +18,9 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             <script src="{{ asset('js/script.js') }}" defer></script>
+            <script src="{{ asset('js/scriptpanier.js') }}" defer></script>
+            <script src="{{ asset('js/scriptgeneral.js') }}" defer></script>
+            <script src="{{ asset('js/scriptpagearticles.js') }}" defer></script>
             {# librairies js #}
                 {# gsap #}<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 {# jquery #}<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -59,6 +62,12 @@
                                     <div class="navbar-list-item">
                                         <a href="{{ path('app_profile') }}">{{ app.user.prenom }}</a> 
                                         <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
+
+                                    </div>
+                                    <div class="navbar-list-item">
+                                        <a href="{{ path('app_panier') }}">panier: <span id='panier'>0</span> produit(s)</a>
+                                        <img src="" class="item-icon" alt="">
+
                                     </div>
 
                                 {% else %} {# Si on a pas d'user connecté, on affiche seulement le contenu suivant :s #}

@@ -6,98 +6,87 @@
 
 
 
-<div class="home-searchbar-container">
-    {% if searchResult  %}
-        {# Si on a des résultats de recherche, on affiche un bouton de retour à la liste complète #}
-        <a href="{{path('app_manif')}}" class="home-searchbar-retour retour-animate">Afficher tous les spectacles</a>
-    {% endif %}
+    <div class="home-searchbar-container">
+        {% if searchResult  %}
+            {# Si on a des résultats de recherche, on affiche un bouton de retour à la liste complète #}
+            <a href="{{path('app_manif')}}" class="home-searchbar-retour retour-animate">Afficher tous les spectacles</a>
+        {% endif %}
 
-    <div class="home-searchbar-group" id="toggle">
-        {# on appelle le controller qui génère la barre de recherche (c'est là qu'on peut en changer les infos) #}
-        {{ render(controller(
-        'App\\Controller\\SearchController::searchBar'
-        )) }}
+        <div class="home-searchbar-group" id="toggle">
+            {# on appelle le controller qui génère la barre de recherche (c'est là qu'on peut en changer les infos) #}
+            {{ render(controller(
+                'App\\Controller\\SearchController::searchBar'
+            )) }}
+        </div>
+
     </div>
-    
-</div>
 
 
 
-<main>
-    
-<section class="container-gallery-manif">
-    
-    <div class="container-manif-card">
-       
-        
-        {% if searchResult  %} {# si on a des résultats de recherche, alors on les affiche #}
-            {% if app.request.method == 'POST' %}
-                {% if searchResult | length == 0 %}{# Si la recherche est vide, on a un message d'erreur. #}
-                    <h4>Aucun résulat pour votre recherche.</h4>
-                {% else %}
-                    {% for manif in searchResult %} {# Si la recherche n'est pas vide, on parcourt le résultat. #}
-                        <div class="manif-card">
-                            <div class="manif-card-img" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
-                                <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
-                            </div>
-                    
-                            <div class="manif-card-title">
-                                <h4>{{manif.getManifTitre}}</h4>
-                            </div>
+    <main>
 
-                            <div class="manif-card-label">
-                                <p>{{manif.getManifGenre}}</p>
-                                <p>{{manif.getManifDate}}</p>
-                                <p> {% if manif.getManifLieu is not null %} {# On n'affiche l'info lieu que si elle n'est pas NULL #}
-                                        {{manif.getManifLieu.getLieuNom}}
-                                    {% endif %}
-                                </p>
+    <section class="container-gallery-manif">
+
+        <div class="container-manif-card">
+
+
+            {% if searchResult  %} {# si on a des résultats de recherche, alors on les affiche #}
+                {% if app.request.method == 'POST' %}
+                    {% if searchResult | length == 0 %}{# Si la recherche est vide, on a un message d'erreur. #}
+                        <h4>Aucun résulat pour votre recherche.</h4>
+                    {% else %}
+                        {% for manif in searchResult %} {# Si la recherche n'est pas vide, on parcourt le résultat. #}
+                            <div class="show-card" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                    <span class="show-card-background" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                        <div class="show-card-content">
+                            <div class="show-card-content-title"><p>{{manif.getManifTitre}}</p></div>
+
+                            <div class="show-card-content-tagsContainer">
+                                <div class="show-card-content-tags genre"><p>{{manif.getManifGenre}}</p></div>
+
+                                <div class="show-card-content-tags lieu"><a href="#">{{manif.getManifLieu}}</a></div>
                             </div>
 
-                            <div class="card-separation-container"><span class="card-separation"></span></div>
-
-                            <div class="manif-card-desc"><p>{{manif.getManifDesc}}</p></div>
-                    
+                            <div class="show-card-content-tagsContainer bouton">
+                                <a class="show-card-content-bouton" href="./manif/{{ manif.getId }}">EN VOIR +</a>
+                            </div>
                         </div>
-                    {% endfor %} {# fin de la boucle #}
-                {% endif %} {# fin du if .length #}
-            {% endif %} {# fin du if POST #}
+                    </span>
+                            </div>
+                        {% endfor %} {# fin de la boucle #}
+                    {% endif %} {# fin du if .length #}
+                {% endif %} {# fin du if POST #}
 
-        {# si on a pas de résultats de recherche, alors on affiche tout #}
-        {% else %}
-        {% for manif in allManif %}
-                <div class="manif-card">
-                    
-                    <div class="manif-card-img" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
-                            <span class="manif-card-img-dark"> <a href="" class="manif-card-button">Réserver</a></span>
+                {# si on a pas de résultats de recherche, alors on affiche tout #}
+            {% else %}
+                {% for manif in allManif %}
+                    <div class="show-card" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                    <span class="show-card-background" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                        <div class="show-card-content">
+                            <div class="show-card-content-title"><p>{{manif.getManifTitre}}</p></div>
+
+                            <div class="show-card-content-tagsContainer">
+                                <div class="show-card-content-tags genre"><p>{{manif.getManifGenre}}</p></div>
+
+                                <div class="show-card-content-tags lieu"><a href="#">{{manif.getManifLieu}}</a></div>
+                            </div>
+
+                            <div class="show-card-content-tagsContainer bouton">
+                                <a class="show-card-content-bouton" href="./manif/{{ manif.getId }}">EN VOIR +</a>
+                            </div>
+                        </div>
+                    </span>
                     </div>
-                    
-                    <div class="manif-card-title">
-                        <h4>{{manif.getManifTitre}}</h4>
-                    </div>
 
-                    <div class="manif-card-label">
-                        <p>{{manif.getManifGenre}}</p>
-                        <p>{{manif.getManifDate}}</p>
-                        <p>{% if manif.getManifLieu is not null %}
-                                {{manif.getManifLieu.getLieuNom}}
-                            {% endif %}</p>
-                    </div>
+                {% endfor %}
+            {% endif %}
 
-                    <div class="card-separation-container"><span class="card-separation"></span></div>
-
-                    <div class="manif-card-desc"><p>{{manif.getManifDesc}}</p></div>
-                    
-                </div>
-        {% endfor %}
-    {% endif %}
-
-    {% if allManif == null and searchResult == null %} {# Si le résultat de la recherche ne correspond à rien, on affiche un message. #}
-        <p class="noresult">Aucun résultat !</p>
-        <a href="{{path('app_manif')}}" class="home-searchbar-retour">Retour à la liste des spectacles.</a>
-    {% endif %}
-    </div>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+            {% if allManif == null and searchResult == null %} {# Si le résultat de la recherche ne correspond à rien, on affiche un message. #}
+                <p class="noresult">Aucun résultat !</p>
+                <a href="{{path('app_manif')}}" class="home-searchbar-retour">Retour à la liste des spectacles.</a>
+            {% endif %}
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 {% endblock %}

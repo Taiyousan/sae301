@@ -16,7 +16,7 @@
 
     --font-navbar : 'Josefin Sans', sans-serif;
     --font-all : 'Josefin Sans', sans-serif;
-  }
+}
 
 
 
@@ -25,10 +25,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.manif-card 
+.manif-card
 {
     display: flex;
     flex-direction: column;
@@ -39,14 +39,28 @@
     width: 200px;
     flex-basis: 350px;
     color: black;
-    transition: 0.2s; 
+    transition: 0.2s;
     box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.manif-card > div, .manif-card > span {
+    opacity: 0;
+    transition: 0.2s;
 }
 
 .manif-card:hover {
     transform: translateY(-20px);
     box-shadow: 0 2px 30px -5px rgb(0 0 0 / 50%);
 }
+
+.manif-card:hover > span, .manif-card:hover > div {
+    opacity: 1;
+    background-color: white;
+}
+
 
 .manif-card-img {
     width: 100%;
@@ -73,7 +87,7 @@
     padding: 8px;
     opacity: 0;
     transition: 0.4s;
-    transform: translateY(200px);  
+    transform: translateY(200px);
     z-index: 10;
     border : solid 2.5px var(--color-tonique);
     font-size: 20px;
@@ -121,7 +135,7 @@
     gap: 70px;
 }
 .container-manif-card>* {
-    
+
 }
 
 .manif-card-title {
@@ -191,6 +205,124 @@ main {
 }
 
 
+/* deuxième page manif */
+
+.show-card {
+    height: 370px;
+    width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    transition: 0.2s;
+
+}
+
+.show-card-background {
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: flex-end;
+}
+
+.show-card-background:hover {
+    background-size: 80%;
+}
+
+.show-card-content {
+    opacity: 0;
+    transition: 0.2s;
+    background-color: rgba(255, 255, 255, 0.81);
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100px) scale(0);
+    text-align: center;
+}
+
+.show-card:hover .show-card-content{
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}
+
+.show-card-content-title{
+    color:var(--color-tonique);
+    font-family: var(--font-all);
+    font-size: 20px;
+    margin-top: 10px;
+    width: 90%;
+    border: var(--color-tonique) 1px solid;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+
+.show-card-content-tagsContainer {
+
+    color: white;
+    font-family: var(--font-all);
+    margin-top: 10px;
+    padding: 0px;
+
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.show-card-content-tags{
+    font-size: 10px;
+
+    padding: 5px;
+}
+
+.genre{
+    background-color:var(--color-tonique);
+}
+
+.lieu{
+    background-color: white;
+    color: var(--color-tonique);
+}
+
+.lieu a{
+    background-color: white;
+    color: var(--color-tonique);
+}
+
+.lieu a:visited{
+    background-color: white;
+    color: var(--color-tonique);
+}
+
+.bouton {
+    position: absolute;
+    bottom: 0;
+}
+
+.show-card-content-bouton{
+    /* max-width: 10px; */
+    margin-top: 10px;
+    background-color: var(--color-tonique);
+    padding: 10px;
+    text-justify: center;
+    font-size: 10px;
+    width: 100%;
+    color: white;
+}
+
+.show-card-content-bouton:visited{
+    color: white;
+}
+
+
 /* Navbar -------------------------- */
 
 header {
@@ -236,7 +368,7 @@ header {
     justify-content: space-between;
     height: 100%;
     align-items: center;
-    
+
 }
 
 .navbar-list-container > a {
@@ -274,7 +406,7 @@ header {
 }
 
 .navbar-list-item:hover img {
-   transform: rotate(720deg);
+    transform: rotate(720deg);
 }
 
 
@@ -415,7 +547,7 @@ section.section_form {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     font-family: var(--font-all);
 }
 
@@ -555,7 +687,7 @@ div.form_container {
     padding-bottom:10px;
     width: 100%;
     background-color: var(--color-tonique);
-    
+
     border-radius: 20px;
     box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
 }
@@ -577,4 +709,59 @@ div.form_container {
     box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
 }
 
+/* ===========PAGE LIEUX============= */
+
+.container-lieu-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    padding: 2vw;
+    justify-content: center;
+    gap: 5vw;
+}
+
+
+
+li{
+    list-style-type: none;
+    margin-top: 1vh;
+}
+
+.lieu_info{
+    padding: 1vw 1vh;
+    width: 50%;
+    color: white;
+}
+
+
+.lieu_manif{
+    padding: 1vw;
+    width: 40%;
+    color: #650A0A;
+    background-color: white;
+}
+
+.lieu_mani_current{
+    margin-bottom: 1.5vh ;
+}
+
+.lieu_place{
+    color: #c71717;
+    text-align: center;
+    margin: 2vh;
+    padding: 2vh;
+    background-color: white;
+}
+
+
+.lieu_intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: var(--font-all);
+    margin: 5vh;
+}
 
