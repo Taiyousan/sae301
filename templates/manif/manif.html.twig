@@ -6,7 +6,7 @@
 
 
 
-    <div class="home-searchbar-container">
+    <div class="home-searchbar-container"  id="up">
         {% if searchResult  %}
             {# Si on a des résultats de recherche, on affiche un bouton de retour à la liste complète #}
             <a href="{{path('app_manif')}}" class="home-searchbar-retour retour-animate">Afficher tous les spectacles</a>
@@ -24,8 +24,9 @@
 
 
     <main>
-
+        
     <section class="container-gallery-manif">
+        
 
         <div class="container-manif-card">
 
@@ -86,7 +87,9 @@
                 <a href="{{path('app_manif')}}" class="home-searchbar-retour">Retour à la liste des spectacles.</a>
             {% endif %}
         </div>
+        
     </section>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 {% endblock %}
