@@ -31,7 +31,7 @@
     <div class="bouton_commande">
         <a href="./manifestation" class="retour_commande">Retour</a>
 
-        <form action="./finalisation" method="post">
+        <form action="{{ path('app_final_panier') }}" method="post">
             <input type="hidden" name="liste" id="liste">
             <input type="submit" value="Valider ma commande." class="valider_commande">
         </form>
