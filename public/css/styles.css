@@ -886,3 +886,7 @@ footer a, footer a:visited {
     color:white;
     padding: 6px;
 }
+
+.mobile-navbar {
+    display: none;
+}
