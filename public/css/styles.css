@@ -37,6 +37,7 @@
     font-weight: 300;
     margin-bottom: 50px;
     width: 200px;
+    min-height: 200px !important;
     flex-basis: 350px;
     color: black;
     transition: 0.2s;
@@ -47,7 +48,7 @@
 
 
 .manif-card > div, .manif-card > span {
-    opacity: 0;
+    
     transition: 0.2s;
 }
 
@@ -58,7 +59,7 @@
 
 .manif-card:hover > span, .manif-card:hover > div {
     opacity: 1;
-    background-color: white;
+    /* background-color: white; */
 }
 
 
@@ -844,4 +845,44 @@ footer a, footer a:visited {
     color: white;
     margin-top: 100px;
     margin-top: 40px;
+}
+
+/* MENTIONS LEGALES */
+.mentions {
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-all);
+}
+
+.mentions a {
+    color: var(--color-tonique);
+}
+.mentions a:visited {
+    color: var(--color-tonique);
+}
+
+.mention-container1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mention-container1 p {
+    margin-bottom: 5px;
+    width: 500px;
+}
+
+.mention-label {
+    font-weight: bold;
+}
+
+.mention-titre {
+    font-size: larger;
+    background-color: var(--color-tonique);
+    color:white;
+    padding: 6px;
 }

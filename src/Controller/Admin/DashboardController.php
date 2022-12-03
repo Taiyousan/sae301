@@ -27,14 +27,15 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Sae301');
+            ->setTitle('LA COHORTE');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Les manifestations', 'fas fa-list', Manifestation::class);
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', User::class);
-        yield MenuItem::linkToCrud('Lieux', 'fas fa-list', Lieux::class);
+        yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-gear');
+        yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'app_accueil');
+        yield MenuItem::linkToCrud('Gérer les spectacles', 'fas fa-masks-theater', Manifestation::class);
+        yield MenuItem::linkToCrud('Gérer les utilisateurs', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Gérer les lieux', 'fas fa-map', Lieux::class);
     }
 }

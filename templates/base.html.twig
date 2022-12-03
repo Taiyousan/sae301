@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="navbar-list-item panierbox">
                                         <a href="{{ path('app_panier') }}">Panier :</a>
-                                        <div><p id='panier'>0</p></div>
+                                        <div><p id='panier'></p></div>
                                     </div>
                                     <div class="navbar-list-item">
                                         <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
@@ -109,19 +109,23 @@
                     <figcaption>Tous les spectacles, au meilleur prix</figcaption>
                 </div>
                 <div class="footer-list">
-                    <a href="">Trouver un spectacle</a>
-                    <a href="">Consulter la liste des salles</a>
-                    <a href="">Accéder à mon profil</a>
+                    <a href="{{ path('app_manif') }}">Trouver un spectacle</a>
+                    <a href="{{ path('app_lieux') }}">Consulter la liste des salles</a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href="{{ path('app_profile') }}">Accéder à mon profil</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}">Se connecter</a>
+                {% endif %}
                 </div>
                 <div class="footer-list">
-                    <a href="">Mentions légales</a>
-                    <a href="">Qui sommes-nous ?</a>
-                    <a href="">FAQ</a>
+                    <a href="{{ path('app_mentions_legales')}}">Mentions légales</a>
+                    <a href="#">Qui sommes-nous ?</a>
+                    <a href="#">FAQ</a>
                 </div>
                 <div class="footer-list">
-                    <a href="">Faire une réclamation</a>
-                    <a href="">Se faire rembourser</a>
-                    <a href="">Proposer un spectacle</a>
+                    <a href="#">Faire une réclamation</a>
+                    <a href="#">Se faire rembourser</a>
+                    <a href="#">Proposer un spectacle</a>
                 </div>
             </div>
             <div class="footer-copyright">
