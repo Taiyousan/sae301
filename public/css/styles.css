@@ -391,10 +391,16 @@ header {
 }
 
 .navbar-list2-container {
-    width: 300px;
+    width: fit-content;
     height: 100%;
     text-align: center;
 }
+
+.navbar-list2-container > div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 .navbar-list-item {
     text-align: center;
@@ -402,6 +408,7 @@ header {
     align-items: flex-end;
     justify-content: space-between;
     cursor: pointer;
+    height: fit-content;
 }
 
 .navbar-list-item img {
@@ -413,6 +420,22 @@ header {
     transform: rotate(720deg);
 }
 
+.navbar-list-item  #panier {
+    transition: 0.5s;
+    color :white;
+    font-size: large;
+}
+
+.navbar-list-item:hover  #panier {
+    transform: rotate(720deg); 
+}
+
+.adminbox a{
+    text-decoration:underline;
+}
+
+
+
 
 
 .navbar-list-item a {
@@ -422,6 +445,7 @@ header {
 .navbar-searchbar-container {
     position: relative;
     opacity: 0;
+    z-index: -20;
 }
 
 .navbar-searchbar {
@@ -446,6 +470,7 @@ header {
     right: 12px;
     top: 4px;
 }
+
 
 
 /* ACCUEIL --------------------------- */

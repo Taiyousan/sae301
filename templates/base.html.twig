@@ -56,18 +56,17 @@
                                 {% if is_granted('IS_AUTHENTICATED_FULLY') %} {# Si on a un user connecté, on affiche le contenu suivant #}                   
                                     
                                     <div class="navbar-list-item">
-                                        <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
-                                        <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
-                                    </div>
-                                    <div class="navbar-list-item">
                                         <a href="{{ path('app_profile') }}">{{ app.user.prenom }}</a> 
                                         <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
 
                                     </div>
+                                    <div class="navbar-list-item panierbox">
+                                        <a href="{{ path('app_panier') }}">Panier :</a>
+                                        <div><p id='panier'>0</p></div>
+                                    </div>
                                     <div class="navbar-list-item">
-                                        <a href="{{ path('app_panier') }}">panier: <span id='panier'>0</span> produit(s)</a>
-                                        <img src="" class="item-icon" alt="">
-
+                                        <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                        <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
                                     </div>
 
                                 {% else %} {# Si on a pas d'user connecté, on affiche seulement le contenu suivant :s #}
@@ -82,16 +81,18 @@
                                     </div>
                                 {% endif %}
                            
-                            <div class="navbar-list-item">
+                            
                                 
                                 {% if is_granted('ROLE_ADMIN') %} {# Si l'user connecté à le rôle d'admin, on affiche le contenu suivant : #}
+                                <div class="navbar-list-item adminbox">
                                     <a href="{{ path('admin') }}">Admin</a>
                                     <img src="{{ asset("img/setting.png") }}" alt="">
+                                </div>
                                 {% endif %}
 
                                 
                                 
-                            </div>
+                            
                         </div>
 
                         
