@@ -37,6 +37,7 @@
     font-weight: 300;
     margin-bottom: 50px;
     width: 200px;
+    min-height: 200px !important;
     flex-basis: 350px;
     color: black;
     transition: 0.2s;
@@ -47,7 +48,7 @@
 
 
 .manif-card > div, .manif-card > span {
-    opacity: 0;
+    
     transition: 0.2s;
 }
 
@@ -58,7 +59,7 @@
 
 .manif-card:hover > span, .manif-card:hover > div {
     opacity: 1;
-    background-color: white;
+    /* background-color: white; */
 }
 
 
