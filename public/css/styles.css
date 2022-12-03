@@ -846,3 +846,43 @@ footer a, footer a:visited {
     margin-top: 100px;
     margin-top: 40px;
 }
+
+/* MENTIONS LEGALES */
+.mentions {
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-all);
+}
+
+.mentions a {
+    color: var(--color-tonique);
+}
+.mentions a:visited {
+    color: var(--color-tonique);
+}
+
+.mention-container1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mention-container1 p {
+    margin-bottom: 5px;
+    width: 500px;
+}
+
+.mention-label {
+    font-weight: bold;
+}
+
+.mention-titre {
+    font-size: larger;
+    background-color: var(--color-tonique);
+    color:white;
+    padding: 6px;
+}
