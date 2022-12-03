@@ -5,9 +5,7 @@
 {% block body %}
 <main>
 <form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    
 
     {% if app.user %}
         <div class="mb-3">
@@ -38,7 +36,9 @@
                             <label for="inputPassword">Mot de passe</label>
                             <input type="password" name="password" id="inputPassword" class="form-control" required>
                         </div>
-                    
+                    {% if error %}
+        <div class="alert alert-danger">Identifiant ou mot de passe incorrect.</div>
+    {% endif %}
                         <div>
                             <input type="hidden" name="_csrf_token"
                                    value="{{ csrf_token('authenticate') }}">
