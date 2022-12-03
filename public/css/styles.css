@@ -238,18 +238,18 @@ main {
     opacity: 0;
     transition: 0.2s;
     background-color: rgba(255, 255, 255, 0.81);
-    height: 50%;
+    height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(100px) scale(0);
+    transform: scale(0);
     text-align: center;
 }
 
 .show-card:hover .show-card-content{
     opacity: 1;
-    transform: translateY(0px) scale(1);
+    transform: scale(1);
 }
 
 .show-card-content-title{
@@ -279,8 +279,12 @@ main {
 
 .show-card-content-tags{
     font-size: 10px;
-
+    height: fit-content;
     padding: 5px;
+}
+
+.tagbox {
+    height: 60px;
 }
 
 .genre{
