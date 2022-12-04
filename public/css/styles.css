@@ -13,7 +13,7 @@ html {
     --color-tonique: #a60000;
     --color-active: #c71717;
     --color-secondaire: #eda010;
-
+    --color-foncee : #650A0A;
     --height-navbar: 60px;
 
     --border-test : 1px solid black;
@@ -792,11 +792,16 @@ li{
 
 .lieu_intro {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items:center;
     font-size: 50px;
     font-family: var(--font-all);
-    margin: 5vh;
+    margin-right: 130px;
+    margin-left: 130px;
+    margin-bottom: 60px;
+    background-color: var(--color-foncee);
+    padding: 10px;
+    color: white;
 }
 
 /* FOOTER  */

@@ -24,7 +24,11 @@
 
 
     <main>
-        
+    {% if searchResult  %}
+        <div class="lieu_intro">Résultats correspondant à votre recherche</div>
+    {% else %}
+        <div class="lieu_intro">Spectacles et représentations</div>
+    {% endif %}
     <section class="container-gallery-manif">
         
 

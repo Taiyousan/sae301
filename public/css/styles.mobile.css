@@ -180,4 +180,12 @@ footer {
     width: 100%;
 }
 
+/* Titre des pages */
+.lieu_intro {
+    font-size: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    text-align: end;
+}
+
 } /*FIN DU MEDIA QUERY */
