@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) and (max-width: 1203px){
+@media screen and (max-width: 1203px){
     /* VARIABLES ------------------ */
     :root {
         --color-neutre: #eeeeee;
@@ -208,6 +208,17 @@ footer {
 
 .small {
     font-size: 10px;
+}
+
+.resa-infos-infos div p {
+    width: 100px;
+}
+
+/* PANIER */
+
+.panier_produit {
+    flex-direction: column;
+    height: 600px;
 }
 
 } /*FIN DU MEDIA QUERY */

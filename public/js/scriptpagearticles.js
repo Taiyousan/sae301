@@ -3,7 +3,7 @@ document.getElementById('ajout').addEventListener('click',function() {
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
     var prix= document.getElementById('prix').innerHTML
-    var affiche = document.get
+    var affiche = document.getElementById('affiche').dataset.affiche
     console.log( id + " " + article + " " + prix )
     console.log('click')
 
@@ -15,7 +15,7 @@ document.getElementById('ajout').addEventListener('click',function() {
     }
     else        {
         console.log("l'article n'est pas pour l'instant dans le panier, il va falloir l'ajouter")
-        montab.push({ 'id': id, 'article': article, 'quantite': document.getElementById('qte').value , 'prix': prix})
+        montab.push({ 'id': id, 'article': article, 'quantite': document.getElementById('qte').value , 'prix': prix, 'affiche' : affiche})
         console.log(montab)
     }
 

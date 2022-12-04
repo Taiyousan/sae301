@@ -932,13 +932,51 @@ overflow-y: hidden;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-color: pink;
+    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    width: 80%;
+}
+
+.panier_produit div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.panier_produit div button {
+    width: 60%;
+}
+
+.panier_finir {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: var(--font-all);
+    height: 100px;
+}
+
+.retour_commande, .retour_commande:visited {
+    color: black;
+}
+
+.valider_commande {
+    background-color: var(--color-tonique);
+    color: white;
+    font-family: var(--font-all);
+    padding: 10px;
+    border: none;
 }
 
 #zone {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 4vh;
+    width: 100vw;
+    font-family: var(--font-all);
 }
 
 /* PAGE RESERVATION */
@@ -962,7 +1000,7 @@ overflow-y: hidden;
 
 .resa-infos-container {
     position: absolute;
-    top: -200px;
+    top: -260px;
     left: 220px;
     z-index: 2;
     display: flex;
@@ -974,12 +1012,17 @@ overflow-y: hidden;
 
 .resa-infos-infos {
     margin-left: 20px;
+    width: 500px;
     display: flex;
     flex-direction: column;
 }
 
 .resa-infos-infos > div {
     margin-bottom: 30px;
+}
+
+.resa-infos-infos div p {
+    width: 600px;
 }
 .resa-infos-prix {
     font-size: 30px;
@@ -1039,4 +1082,8 @@ overflow-y: hidden;
     border : solid 2.5px var(--color-tonique);
     font-size: 20px;
     cursor: pointer;
+}
+
+.panier_affiche img{
+    max-width: 200px;
 }

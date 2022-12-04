@@ -12,19 +12,25 @@
 
         </div>
 
-        <div class="prix_total">prix total : <span id="total">0</span>€</div>
+        
     </div>
-    <div class="bouton_commande">
-        <a href="./manifestation" class="retour_commande">Retour</a>
-
-
-
-
-        <form action="{{ path('app_final_panier') }}" method="post">
+    <div class="panier_finir">
+        <div class="prix_total">Prix total : <span id="total">0</span>€</div>
+        
+        <div class="bouton_commande">
+        
+            <form action="{{ path('app_final_panier') }}" method="post">
 
             <input type="hidden" name="liste" id="liste">
             <input type="submit" value="Valider ma commande." class="valider_commande">
         </form>
+    </div>
+    <a href="./manifestation" class="retour_commande">Retour</a>
+
+    
+
+
+        
     </div>
 
 
