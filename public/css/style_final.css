@@ -1,0 +1,34 @@
+.final-container {
+    background-color: #a9a9a9c4;
+    /* width: 200px; */
+    display: flex;
+    /* height: 20px; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5vh;
+}
+
+.final-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-family: var(--font-all);
+    height: 10vh;
+    width: 60%;
+    background-image: url(../public/img/register_sidebar_bg.png);
+    background-size: cover;
+}
+
+.final-DB {
+    /* height: 10vh; */
+    width: 60%;
+}
+
+.final-pay {
+    height: 53vh;
+}
+
+.final-summary {
+}
