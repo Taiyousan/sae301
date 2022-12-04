@@ -118,8 +118,30 @@
 
 @media screen and (max-width: 1203px){
 
+    .final-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 22px;
+        font-family: var(--font-all);
+        height: 10vh;
+        width: 90%;
+        background-image: url(/bu_sae/sae301/public/img/register_sidebar_bg.png);
+        background-size: cover;
+        color: #f1f1f1;
+        border-radius: 10px;
+    }
 
-
+    .final-DB {
+        display: flex;
+        /* height: 10vh; */
+        width: 90%;
+        /* padding: 2vh; */
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 
 }
 
@@ -129,7 +151,7 @@
 /*=========== accueil =============*/
 
   .hero_image{
-      background-image: url('img/404984.jpg');
+      background-image: url('/img/404984.jpg');
       background-size: cover;
       width: 100%;
       height: 70vh;
