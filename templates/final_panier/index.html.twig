@@ -23,16 +23,22 @@
 
         <div class="final-DB">
             <div class="final-pay">
-                <label for="cb-num">Numéro de Carte banquaire</label>
-                <input type="text" name="cb-num" placeholder="XXXX-XXXX-XXXX-XXXX" >
-                <div>
-                    <label for="cb-date">Date d'expiration</label>
-                    <input type="text" name="cb-date" placeholder="MM/YY" >
+                <div class="final_card fim">
+                     <label for="cb-num">Numéro de Carte banquaire</label>
+                     <input type="text" name="cb-num" placeholder="XXXX-XXXX-XXXX-XXXX" >
+                </div>
+                <div class="final_card">
                     <label for="cb-sec">Code de sécurité</label>
                     <input type="text" name="cb-sec" placeholder="XXX" >
+
                 </div>
 
-                <div    >  </div>
+                <div class="final_card">
+                    <label for="cb-date">Date d'expiration</label>
+                    <input type="text" name="cb-date" placeholder="MM/YY" >
+                </div>
+
+
 
             </div>
 
@@ -45,7 +51,7 @@
                 </div>
 
                 <hr>
-                <p class="Tot-spaceB"><span>TOTAL</span><span> prix total</span></p>
+                <p class="Tot-spaceB"><span class="Ttext">TOTAL</span><span id="totalPR">  </span></p>
 
 
             </div>
@@ -64,14 +70,19 @@
 
         liste = '{{ Liste }}'
         tabliste = JSON.parse(liste.replace(/(&quot\;)/g,"\""));
-
+        totalG = 0
 
         tabliste.forEach(uneinfo => {
+            prix = uneinfo.prix
+            qte = uneinfo.quantite
+            totalG += qte * prix
+
+
 
             html = `<div id="${uneinfo.id}" class="finalP_art">
                         <h4>${uneinfo.article}</h4>
                         <div class="finalP_info">
-                            <p> Prix à l'unité : ${uneinfo.prix}</p> <p> Qté : ${uneinfo.quantite}</p>
+                            <p> Prix à l'unité : ${uneinfo.prix} €</p> <p> Qté : ${uneinfo.quantite}</p>
                         </div>
 
                     </div>`;
@@ -79,7 +90,7 @@
     document.getElementById('finalprod').innerHTML += html
 
 })
-
+     document.getElementById('totalPR').innerHTML += totalG+" €"
     </script>
 
     {% endblock %}
