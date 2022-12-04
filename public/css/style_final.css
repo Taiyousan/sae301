@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: center;
     row-gap: 5vh;
+    margin-top: 5vh;
+    font-family: var(--font-all);
 }
 
 .final-text {
@@ -17,18 +19,25 @@
     font-family: var(--font-all);
     height: 10vh;
     width: 60%;
-    background-image: url(../public/img/register_sidebar_bg.png);
+    background-image: url('/bu_sae/sae301/public/img/register_sidebar_bg.png');
     background-size: cover;
 }
 
 .final-DB {
+    display: flex;
     /* height: 10vh; */
     width: 60%;
+    justify-content: space-around;
 }
 
 .final-pay {
     height: 53vh;
+    width: 60%;
+    background-color: brown;
 }
 
 .final-summary {
+    background-color: bisque;
+    height: 53vh;
+    width: 30%;
 }

@@ -4,19 +4,64 @@
 
 {% block stylesheets %}
     {{parent()}}
-    <link rel="stylesheet" href="{{ asset('css/styles_final.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style_final.css') }}">
 {% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script type="text/javascript" defer>
+
+        liste = '{{ Liste }}'
+        tabliste = JSON.parse(liste.replace(/(&quot\;)/g,"\""));
+        console.log(tabliste)
+        console.log(tabliste[0].article)
+        tabliste.forEach(ArtHtml);
+
+        function ArtHtml(){
+            divL = document.getElementById('finalP_list')
+            divL.innerHTML += ' <div class="finalP_art"> <h3>nom</h3>   <div class="finalP_info"> <p>prix unit</p> <p>Qté</p> </div>  </div>'
+
+        }
+
+
+
+    </script>
+
+
+{% endblock %}
+
 
 {% block body %}
 <main>
 
     <div class="final-container">
 
-        <div class="final-text"></div>
+        <div class="final-text">Vous avez presque finis ! Entrez vos information de paiement    </div>
 
         <div class="final-DB">
-            <div class="final-pay"></div>
-            <div class="final-summary"></div>
+            <div class="final-pay">
+                <label for="cb-num">Numéro de Carte banquaire</label>
+                <input type="text" name="cb-num" placeholder="XXXX-XXXX-XXXX-XXXX" >
+                <div>
+                    <label for="cb-date">Date d'expiration</label>
+                    <input type="text" name="cb-date" placeholder="MM/YY" >
+                    <label for="cb-sec">Code de sécurité</label>
+                    <input type="text" name="cb-sec" placeholder="XXX" >
+                </div>
+            </div>
+
+            <div class="final-summary">
+                <div class="finalP_titre">Mes Achats</div>
+                <hr>
+                <div id="finalP-list">
+
+                </div>
+
+                <hr>
+                <p class="Tot-spaceB"><span>TOTAL</span><span> prix total</span></p>
+
+
+            </div>
         </div>
 
     </div>
