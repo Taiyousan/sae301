@@ -10,7 +10,7 @@ var totalgeneral=0
 montab.forEach(uneinfo => {
 
     html = `<div id="${uneinfo.id}" class="panier_produit">
-            <div class="panier_affiche"><img src="/public/img/${uneinfo.affiche}"></div>
+            <div class="panier_affiche"><img src="img/${uneinfo.affiche}"></div>
             <div class="panier_event"><p>${uneinfo.article}</p></div>
             <div class="panier_place"><p>Nombre de place : </p><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></div>
             <div class="panier_price"><p>Prix de la place : </p><span><span class="unitaire">${uneinfo.prix}</span> €</span></div>
