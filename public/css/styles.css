@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 /* VARIABLES ------------------ */
 :root {
     --color-neutre: #eeeeee;
@@ -885,4 +889,8 @@ footer a, footer a:visited {
     background-color: var(--color-tonique);
     color:white;
     padding: 6px;
+}
+
+.mobile-navbar {
+    display: none;
 }

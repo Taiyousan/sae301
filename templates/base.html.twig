@@ -13,6 +13,7 @@
            {# (librairie css :) #}
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "> 
                 <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/styles.mobile.css') }}">
         {% endblock %}
 
         {% block javascripts %}
@@ -21,6 +22,7 @@
             <script src="{{ asset('js/scriptpanier.js') }}" defer></script>
             <script src="{{ asset('js/scriptgeneral.js') }}" defer></script>
             <script src="{{ asset('js/scriptpagearticles.js') }}" defer></script>
+            <script src="{{ asset('js/script.mobile.js') }}" defer></script>
             {# librairies js #}
                 {# gsap #}<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 {# jquery #}<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -97,11 +99,57 @@
 
                         
                     </nav>
+                    <nav class="mobile-navbar">
+                        <div class="hamburger-container">
+                            <span class="mobile-hamburger" id="hamburger1"></span>
+                            <span class="mobile-hamburger" id="hamburger2"></span>
+                            <span class="mobile-hamburger" id="hamburger3"></span>
+                        </div>
+                        <div class="mobile-menu">
+                            
+                                <div class="mobile-list">
+                                    <a href="{{ path('app_accueil')}}">Accueil</a>
+                                    <a href="{{ path('app_manif')}}">Spectacles</a>
+                                    <a href="{{ path('app_lieux')}}">Lieux</a>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %} {# Si on a un user connecté, on affiche le contenu suivant #}                   
+                                    <div class="navbar-list-item">
+                                        <a href="{{ path('app_profile') }}">{{ app.user.prenom }}</a> 
+                                        <img src="{{ asset('img/profilecircle.png') }}" class="item-icon" alt="">
+                                    </div>
+                                    <div class="navbar-list-item panierbox">
+                                        <a href="{{ path('app_panier') }}">Panier</a>
+                                        <div><p id='panier'></p></div>
+                                    </div>
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                        <img src="{{ asset('img/logout.png') }}" class="item-icon" alt="">
+                                    </div>
+                                {% else %}
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_login') }}">Connexion</a>
+                                        <img src="{{ asset('img/login.png') }}" class="item-icon" alt="">
+                                    </div>
+                                    <div class="navbar-list-item">
+                                        <a class="link" href="{{ path('app_register') }}">Inscription</a>
+                                        <img src="{{ asset('img/register.png') }}" class="item-icon" alt="">
+                                    </div>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %} {# Si l'user connecté à le rôle d'admin, on affiche le contenu suivant : #}
+                                    <div class="navbar-list-item adminbox">
+                                        <a href="{{ path('admin') }}">Admin</a>
+                                        <img src="{{ asset("img/setting.png") }}" alt="">
+                                    </div>
+                                {% endif %}
+                                </div>
+
+                        </div>
+                    </nav>
+                    
                 </header>
             
         {% endblock %}
         {% block body %}{% endblock %}</main>
-
+        <div class="upup"><a href="#up"><img src="{{ asset("img/arrow-up-solid.svg") }}" alt=""></a></div>
         <footer>
             <div class="footer-container">
                 <div class="footer-logo">
