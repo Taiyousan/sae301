@@ -149,6 +149,10 @@ footer {
     height: 100% !important;
 }
 
+.form_container a:visited, .form_container a{
+    color: black;
+}
+
 .form_sidepage {
     width: 100% !important;
     height: 700px !important;
@@ -166,6 +170,14 @@ footer {
     margin-bottom: 40px;
 }
 
+/* MENTIONS LEGALES */
 
+.mention-container1{
+    width: 80%;
+}
+
+.mention-container1 p{
+    width: 100%;
+}
 
 } /*FIN DU MEDIA QUERY */
