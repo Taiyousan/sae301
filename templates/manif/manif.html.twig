@@ -41,7 +41,7 @@
                         <h4>Aucun résulat pour votre recherche.</h4>
                     {% else %}
                         {% for manif in searchResult %} {# Si la recherche n'est pas vide, on parcourt le résultat. #}
-                            <div class="show-card" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
+                            <div class="show-card"  style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
                     <span class="show-card-background" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');">
                         <div class="show-card-content">
                             <div class="show-card-content-title"><p>{{manif.getManifTitre}}</p></div>

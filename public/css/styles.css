@@ -925,3 +925,118 @@ overflow-y: hidden;
     height: 100%;
     overflow-y: scroll;
 }
+
+/* PANIER  */
+.panier_produit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: pink;
+}
+
+#zone {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vh;
+}
+
+/* PAGE RESERVATION */
+.resa-background-background {
+    width: 100vw;
+    height: 70vh;
+    position: fixed;
+    background-size: cover;
+    opacity: 0.8;
+    filter: blur(20px);
+}
+.resa-background {
+    width: 100vw;
+    height: 70vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0;
+    background-size: 40%;
+    z-index: -1;
+}
+
+.resa-infos-container {
+    position: absolute;
+    top: -200px;
+    left: 220px;
+    z-index: 2;
+    display: flex;
+    color: white;
+    font-family: var(--font-all);
+    width: 100%;
+    
+}
+
+.resa-infos-infos {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resa-infos-infos > div {
+    margin-bottom: 30px;
+}
+.resa-infos-prix {
+    font-size: 30px;
+}
+.resa-infos-date {
+    font-size: 30px;
+}
+
+.resa-infos-titre {
+    font-size: 40px;
+    max-width: 50%;
+}
+
+.resa-image {
+    max-width: 200px;
+}
+
+.small {
+    font-size: 20px;
+}
+
+.resa-content-container {
+    width: 100vw;
+    height: fit-content;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.resa-content-content {
+    width: 40%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: var(--font-all);
+}
+
+.resa-content-content p{
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+.main-resa {
+    background-color: rgb(255, 255, 255);
+    min-height: 150vh;
+    margin-bottom: -400px;
+}
+
+.resa-ajout {
+    background-color: var(--color-tonique);
+    color: white;
+    padding: 8px;
+    transition: 0.4s;
+    transform: translateY(200px);
+    z-index: 10;
+    border : solid 2.5px var(--color-tonique);
+    font-size: 20px;
+    cursor: pointer;
+}

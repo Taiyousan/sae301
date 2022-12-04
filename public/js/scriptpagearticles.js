@@ -3,6 +3,7 @@ document.getElementById('ajout').addEventListener('click',function() {
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
     var prix= document.getElementById('prix').innerHTML
+    var affiche = document.get
     console.log( id + " " + article + " " + prix )
     console.log('click')
 
@@ -21,5 +22,13 @@ document.getElementById('ajout').addEventListener('click',function() {
     panier+=parseInt(document.getElementById('qte').value); // incrementation de la valeur du panier
     document.getElementById('panier').innerHTML=panier; // affichage de la valeur du nouveau panier
     document.cookie = "panier="+JSON.stringify(montab)+"; path=/"  // sauvegarde des infos dans le cookie "liste"
+})
+
+document.querySelector('.resa-ajout').addEventListener('click', function(){
+    this.style.boxShadow = '5px 13px 15px -4px rgba(0,0,0,0.6)'
+    setTimeout(() => {
+        this.style.boxShadow = 'none';
+      }, "400")
+    
 })
 

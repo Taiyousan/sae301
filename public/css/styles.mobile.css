@@ -188,4 +188,26 @@ footer {
     text-align: end;
 }
 
+/* page article */
+
+.main-resa {
+    min-height: 200vh;
+}
+
+.resa-content-content {
+    width: 80%;
+}
+
+.resa-infos-container {
+    left: 10px;
+}
+
+.resa-infos-container p {
+    font-size: 18px;
+}
+
+.small {
+    font-size: 10px;
+}
+
 } /*FIN DU MEDIA QUERY */

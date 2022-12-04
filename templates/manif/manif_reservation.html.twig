@@ -3,22 +3,64 @@
 
 
 {% block body %}
+<div class="resa-background-background" style="background-image: url('{{ asset("img/#{manif.getManifAffiche}")}}');"></div>
+<div class="resa-background" style="">
 
-<main>
+</div>
+<main class="main-resa">
+    <div class="resa-infos-container">
+        <div class="resa-image-container">
+            <img src="{{ asset("img/#{manif.getManifAffiche}")}}" alt="Affiche du spectacle" class="resa-image">
+        </div>
+        <div class="resa-infos-infos">
+            <div class="resa-infos-titre">
+                <p>{{ manif.getManifTitre }}</p>
+            </div>
+            <div class="resa-infos-prix">
+                <p>{{ manif.getManifPrix }} €<span class="small"> /personne</span></p>
+            </div>
+            <div class="resa-infos-date">
+                <p>{{ manif.getManifDate }}</p>
+                <p>{{ manif.getManifHoraire }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="resa-content-container">
+        <div class="resa-content-content">
+            <div class="resa-content-genre">
+                <p><span class="mention-titre">Genre :</span> {{ manif.getManifGenre }}</p>
+            </div>
+            <div class="resa-content-desc">
+                <p><span class="mention-titre">Description :</span> {{ manif.getManifDesc }}</p>
+            </div>
+            <div class="resa-content-cast">
+                <p><span class="mention-titre">Casting :</span> {{ manif.getManifCasting }}</p>
+            </div>
+            <a id="ajout" class="resa-ajout">Ajouter au panier</a>
+        </div>
+        
+    </div>
+
+    
+
+    
 
 
-    <div class="manif-card-title">
+    <div class="manif-card-title" style="display :none;">
         <p></p>
 
 
         <span id="article">{{manif.getManifTitre}}</span> - <span id="prix">{{manif.getManifPrix}}</span>€
         <input type="number" value="1" min="1" max="99" id="qte">
         <input type="hidden" id="id" value="{{manif.getId}}">
-        <button id="ajout">ajouter au panier</button>
     </div>
 
     
 
+    
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 
 {% endblock %}
