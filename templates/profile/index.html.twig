@@ -10,7 +10,9 @@
             <div class="form_sidepage" style="background-image: url('{{asset("img/register_sidebar_bg.png")}}');">
                 <div class="form_sidepage_text">
                     <p>Bienvenue sur votre profil, <br>{{ app.user.prenom }} {{ app.user.nom }}.</p>
-                   
+                </div>
+                <div class="form_sidepage_button">
+                 <a href="{{ path('app_login') }}" class="form_login_redirect">Voir mon panier</a>
                 </div>
                 
             </div>

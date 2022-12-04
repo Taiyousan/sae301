@@ -61,6 +61,7 @@ menuItem.forEach(function(item){
             height:500,
             paddingTop:30,
             paddingBottom:30,
+            borderBottom: '3px solid white'
         })
         gsap.to('.mobile-list',{
             opacity:1,
@@ -89,7 +90,8 @@ menuItem.forEach(function(item){
             
             height:'60',
             paddingTop:0,
-            paddingBottom:0
+            paddingBottom:0,
+            borderBottom: 'none'
         })
         gsap.to('.mobile-list',{
             opacity:0,

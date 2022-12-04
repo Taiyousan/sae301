@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) and (max-width: 480px){
+@media screen and (min-width: 320px) and (max-width: 1203px){
     /* VARIABLES ------------------ */
     :root {
         --color-neutre: #eeeeee;
@@ -80,17 +80,17 @@
         padding-right: 40px;
         text-align: end;
     }
-}
+
 
 /* BARRE DE RECHERCHE */
 .home-searchbar{
-    width: 70vw !important;
+    width: 70vw;
     margin-bottom: 10px;
 }
 
 .home-searchbar-group {
-    background: none !important;
-    flex-direction: column !important;
+    background: none;
+    flex-direction: column;
 }
 
 .home-searchbar-group #form {
@@ -102,6 +102,7 @@
 }
 
 .upup {
+    display: block;
     background-color: var(--color-tonique);
     border-top-left-radius: 4px;
     bottom: 0;
@@ -116,3 +117,55 @@
 .upup img {
     max-width: 20px;
 }
+
+/* FOOTER  */
+footer {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+}
+
+/* PAGE LIEUX  */
+
+.lieu_card {
+    flex-basis: 96%;
+    margin-bottom: 20px;
+}
+
+.lieu_card h1, .lieu_card h2 {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+/* FORMULAIRES ET PAGE PROFIL */
+.form_container {
+    flex-direction: column;
+    height: 100% !important;
+}
+
+.form_sidepage {
+    width: 100% !important;
+    height: 700px !important;
+    border-radius: 20px 20px 0px 0px !important;
+    margin-bottom: 50px;
+}
+
+.form_sidepage p:first-child {
+    font-size: 30px;
+}
+
+.form_main {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+
+
+} /*FIN DU MEDIA QUERY */

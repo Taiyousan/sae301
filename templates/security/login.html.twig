@@ -68,6 +68,7 @@
 
 <script>
     window.addEventListener("load", (event) => {
+        if (window.matchMedia("(min-width: 1203px)").matches){
         const labels = document.querySelectorAll('label')//on récupère tous les labels
 
         labels.forEach(function(item){
@@ -81,6 +82,21 @@
                 }
                     
 })
+        }else{
+            const labels = document.querySelectorAll('label')//on récupère tous les labels
+
+        labels.forEach(function(item){
+                let input = item.nextElementSibling //on récupère tous les input
+                
+                    console.log(input)
+                    gsap.to(item, {
+                    x: 0,
+                    opacity : 0.5
+                })   
+                
+                    
+})
+        }
 
 
 })

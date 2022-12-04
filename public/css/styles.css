@@ -488,7 +488,7 @@ header {
 }
 
 .home-searchbar-group {
-    background-color: #252525;
+    background-color: #252525 !important;
     width: 55%;
     height: 50px;
     border-radius: 40px;
@@ -696,6 +696,10 @@ div.form_container {
 
 
 /* Page PROFIL */
+.profile_info {
+    width: 70%;
+}
+
 .profile_info_list {
     display: flex;
     flex-direction: column;
@@ -708,27 +712,24 @@ div.form_container {
     font-size: smaller !important;
     background-color: var(--color-tonique);
     padding: 10px;
-    border-radius: 20px;
     box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    color: white;
 }
 
 .profile_info_list ul {
     width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .profile_info_list ul li {
     padding-top:10px;
     padding-bottom:10px;
     width: 100%;
-    background-color: var(--color-tonique);
-
-    border-radius: 20px;
-    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
 }
 
 .profile-item {
-    color: white;
-    border-radius: 20px;
+    color: var(--color-tonique);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -739,8 +740,7 @@ div.form_container {
     color:  var(--color-tonique);
     background-color: white;
     padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 2px 18px -5px rgb(0 0 0 / 50%);
+    height: 100%;
 }
 
 /* ===========PAGE LIEUX============= */
@@ -893,4 +893,30 @@ footer a, footer a:visited {
 
 .mobile-navbar {
     display: none;
+}
+
+.upup {
+    display: none;
+}
+
+/* PAGE LIEUX  */
+
+.lieu_card{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+border: none;
+padding: 0px;
+width: 50%;
+flex-basis: 40%;
+height: 20vh;
+margin-bottom: 0px;
+justify-content: space-between;
+background-color: #650A0A;
+overflow-y: hidden;
+}
+
+.lieu_manif {
+    height: 100%;
+    overflow-y: scroll;
 }
