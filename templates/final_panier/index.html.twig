@@ -9,23 +9,6 @@
 
 {% block javascripts %}
     {{parent()}}
-    <script type="text/javascript" defer>
-
-        liste = '{{ Liste }}'
-        tabliste = JSON.parse(liste.replace(/(&quot\;)/g,"\""));
-        console.log(tabliste)
-        console.log(tabliste[0].article)
-        tabliste.forEach(ArtHtml);
-
-        function ArtHtml(){
-            divL = document.getElementById('finalP_list')
-            divL.innerHTML += ' <div class="finalP_art"> <h3>nom</h3>   <div class="finalP_info"> <p>prix unit</p> <p>Qté</p> </div>  </div>'
-
-        }
-
-
-
-    </script>
 
 
 {% endblock %}
@@ -48,12 +31,16 @@
                     <label for="cb-sec">Code de sécurité</label>
                     <input type="text" name="cb-sec" placeholder="XXX" >
                 </div>
+
+                <div    >  </div>
+
             </div>
 
             <div class="final-summary">
+
                 <div class="finalP_titre">Mes Achats</div>
                 <hr>
-                <div id="finalP-list">
+                <div id="finalprod">
 
                 </div>
 
@@ -72,3 +59,27 @@
 
     {% endblock %}
 
+    {% block scriptbelow%}
+        <script type="text/javascript" defer>
+
+        liste = '{{ Liste }}'
+        tabliste = JSON.parse(liste.replace(/(&quot\;)/g,"\""));
+
+
+        tabliste.forEach(uneinfo => {
+
+            html = `<div id="${uneinfo.id}" class="finalP_art">
+                        <h4>${uneinfo.article}</h4>
+                        <div class="finalP_info">
+                            <p> Prix à l'unité : ${uneinfo.prix}</p> <p> Qté : ${uneinfo.quantite}</p>
+                        </div>
+
+                    </div>`;
+
+    document.getElementById('finalprod').innerHTML += html
+
+})
+
+    </script>
+
+    {% endblock %}
