@@ -22,7 +22,6 @@ class ManifestationCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
             TextField::new('manif_titre', 'Titre'),
             TextField::new('manif_desc', 'Description'),
             TextField::new('manif_horaire', 'Horaire'),
