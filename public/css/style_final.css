@@ -116,6 +116,21 @@
     border-radius: 7px;
 }
 
+.button-valid {
+    background-color: #a60000;
+    width: 15vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.button-valid a {
+    color: white;
+    font-size: 24px;
+}
+
 @media screen and (max-width: 1203px){
 
     .final-text {
@@ -127,10 +142,20 @@
         font-family: var(--font-all);
         height: 10vh;
         width: 90%;
-        background-image: url(/bu_sae/sae301/public/img/register_sidebar_bg.png);
+        background-image: url('/img/register_sidebar_bg.png');
         background-size: cover;
         color: #f1f1f1;
         border-radius: 10px;
+    }
+
+    button-valid {
+        background-color: #a60000;
+        width: 75vw;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
     }
 
     .final-DB {
@@ -141,6 +166,35 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+    }
+
+    .final-pay {
+        height: 30vh;
+        width: 90%;
+        background-color: white;
+        box-shadow: 0px 0px 5px #9d9d9d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .final_card {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 5vh;
+        width: 80%;
+        flex-direction: column;
+    }
+
+    .final-summary {
+        background-color: #a60000;
+        height: 53vh;
+        /* color: white; */
+        margin-top: 2vh;
+        width: 90%;
+        box-shadow: 0px 0px 5px #9d9d9d;
     }
 
 }
@@ -216,7 +270,7 @@
 
 
 .acc_redir {
-    background-image: url(/bu_sae/sae301/public/img/register_sidebar_bg.png);
+    background-image: url('/img/register_sidebar_bg.png');
     width: 40vw;
     /* text-align: center; */
     display: flex;

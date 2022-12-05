@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Cohorte | Validation {% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{ asset('css/style_final.css') }}">
+{% endblock %}
+{% block body %}
+
+<style>
+
+    .button-val {
+        background-color: #a60000;
+        width: 15vw;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+
+    }
+
+    .button-val a {
+        color: white;
+        font-size: 22px;
+        font-family: var(--font-all);
+    }
+
+    .ab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 3vh;
+        min-height: 30vh;
+    }
+
+    .valid-text{
+        font-size: 22px;
+        font-family: var(--font-all);
+    }
+
+</style>
+
+ <main>
+
+     <div class="ab">
+
+         <div class="valid-text"> Achat Validé </div>
+
+         <div class="button-val" > <a href="{{ path('app_accueil') }}">Retour à l'Accueil</a>  </div>
+
+     </div>
+
+
+
+
+{% endblock %}
