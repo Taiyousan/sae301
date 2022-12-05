@@ -9,13 +9,7 @@ gsap.from('main', {
     y:200
 })
 
-document.querySelector('.onclick').addEventListener('click', function(){
-    this.style.boxShadow = '5px 13px 15px -4px rgba(0,0,0,0.6)'
-    setTimeout(() => {
-        this.style.boxShadow = 'none';
-      }, "400")
-    alert('ok')
-})
+
 
 //animation de la barre de recherche de /manif. Au click, sur le bouton recherche, la barre s'anime
 document.querySelector('.home-searchbar-button').addEventListener('click', function(){
