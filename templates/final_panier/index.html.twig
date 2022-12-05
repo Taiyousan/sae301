@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello FinalPanierController!{% endblock %}
+{% block title %}La Cohorte | Finalisation {% endblock %}
 
 {% block stylesheets %}
     {{parent()}}
@@ -57,6 +57,8 @@
             </div>
         </div>
 
+         <div class="button-valid"> <a href="{{ path('app_validation') }}">Valider le paiement</a>  </div>
+
     </div>
 
 
@@ -90,6 +92,10 @@
     document.getElementById('finalprod').innerHTML += html
 
 })
+
+
+
+
      document.getElementById('totalPR').innerHTML += totalG+" €"
     </script>
 
