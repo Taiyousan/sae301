@@ -1,20 +1,20 @@
-console.log(22222)
+// console.log(22222)
 document.getElementById('ajout').addEventListener('click',function() {
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
     var prix= document.getElementById('prix').innerHTML
     var affiche = document.getElementById('affiche').dataset.affiche
-    console.log( id + " " + article + " " + prix )
-    console.log('click')
+    // console.log( id + " " + article + " " + prix )
+    // console.log('click')
 
     index = montab.findIndex(element => element.id === id); //trouver l'article dans la liste du panier
     if(index>-1){
-        console.log("l'article est deja dans le panier, il faut juste incrementer la qte")
+        // console.log("l'article est deja dans le panier, il faut juste incrementer la qte")
         montab[index].quantite	= parseInt(montab[index].quantite) + parseInt(document.getElementById('qte').value)
         console.log(montab)
     }
     else        {
-        console.log("l'article n'est pas pour l'instant dans le panier, il va falloir l'ajouter")
+        // console.log("l'article n'est pas pour l'instant dans le panier, il va falloir l'ajouter")
         montab.push({ 'id': id, 'article': article, 'quantite': document.getElementById('qte').value , 'prix': prix, 'affiche' : affiche})
         console.log(montab)
     }

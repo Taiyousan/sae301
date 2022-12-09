@@ -1,10 +1,10 @@
 liste = recupCookie("panier")
 if (liste!=null) var montab = JSON.parse(liste)
 else montab = Array()
-console.log(montab)
+// console.log(montab)
 document.getElementById('liste').value=JSON.stringify(montab);
 
-console.log(liste)
+// console.log(liste)
 
 var totalgeneral=0
 montab.forEach(uneinfo => {

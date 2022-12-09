@@ -6,11 +6,11 @@ const hamburgers = document.querySelector('.hamburger-container')
     const menuItem = document.querySelectorAll('.hamburger-item')
     let closeFlag = false
 
-    console.log(menuItem)
+    
 menuItem.forEach(function(item){
-    console.log(item)
+   
     item.addEventListener('click', function(){
-        console.log('true')
+        // console.log('true')
             
             gsap.to(hamburger1, {
                 rotateZ:0,
@@ -39,9 +39,9 @@ menuItem.forEach(function(item){
 })
     hamburgers.addEventListener('click', function(){
 
-        console.log('click')
+        // console.log('click')
         if (!closeFlag){ 
-            console.log('flagfalse')
+            // console.log('flagfalse')
         gsap.to(hamburger1, {
             rotateZ:45,
             y:8
@@ -71,7 +71,7 @@ menuItem.forEach(function(item){
         closeFlag = true
     }
     else if(closeFlag){
-        console.log('popo')
+        // console.log('popo')
         
         gsap.to(hamburger1, {
             rotateZ:0,
