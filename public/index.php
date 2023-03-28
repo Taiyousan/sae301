@@ -1,6 +1,9 @@
 <?php
 
 use App\Kernel;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
